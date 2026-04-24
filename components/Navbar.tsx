@@ -1,0 +1,157 @@
+'use client'
+
+export default function Navbar() {
+  return (
+    <nav className="nav">
+      <div className="nav-logo">
+        <img src="/logo.png" alt="Phonixora Logo" className="nav-logo-img" />
+        <span className="nav-logo-text">Phonixora</span>
+      </div>
+      <div className="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button className="nav-cta">Get Started</button>
+      <style jsx>{`
+        .nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 100;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.5rem 4rem;
+          background: rgba(14, 30, 18, 0.7);
+          backdrop-filter: blur(20px) saturate(180%);
+          border-bottom: 1px solid rgba(123, 191, 122, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .nav-logo {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+        }
+        .nav-logo-img {
+          width: 55px;
+          height: 55px;
+          object-fit: contain;
+          filter: drop-shadow(0 2px 8px rgba(123, 191, 122, 0.2));
+          background: rgba(244, 239, 228, 0.95);
+          border-radius: 50%;
+          padding: 4px;
+          border: 2px solid rgba(123, 191, 122, 0.2);
+        }
+        .nav-logo-text {
+          font-family: var(--font-playfair);
+          font-size: 1.4rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #f4efe4;
+          background: linear-gradient(135deg, #f4efe4 0%, #a8c4a0 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .nav-links {
+          display: flex;
+          gap: 3rem;
+        }
+        .nav-links a {
+          color: #d4c4a0;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          position: relative;
+          transition: color 0.3s;
+        }
+        .nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #7bbf7a, #a8c4a0);
+          transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+          color: #7bbf7a;
+        }
+        .nav-links a:hover::after {
+          width: 100%;
+        }
+        .nav-cta {
+          background: linear-gradient(135deg, #7bbf7a 0%, #2c6b3a 100%);
+          border: none;
+          color: white;
+          font-family: var(--font-dm-sans);
+          font-size: 0.85rem;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          padding: 0.75rem 1.8rem;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s;
+          box-shadow: 0 4px 15px rgba(123, 191, 122, 0.3);
+        }
+        .nav-cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 25px rgba(123, 191, 122, 0.4);
+        }
+        @media (max-width: 1024px) {
+          .nav {
+            padding: 1.2rem 2rem;
+          }
+          .nav-links {
+            gap: 2rem;
+          }
+          .nav-links a {
+            font-size: 0.85rem;
+          }
+        }
+        @media (max-width: 768px) {
+          .nav {
+            padding: 1rem 1.5rem;
+          }
+          .nav-logo-img {
+            width: 45px;
+            height: 45px;
+          }
+          .nav-logo-text {
+            font-size: 1.2rem;
+          }
+          .nav-links {
+            display: none;
+          }
+          .nav-cta {
+            padding: 0.65rem 1.4rem;
+            font-size: 0.8rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .nav {
+            padding: 0.8rem 1rem;
+          }
+          .nav-logo-img {
+            width: 40px;
+            height: 40px;
+          }
+          .nav-logo-text {
+            font-size: 1.1rem;
+          }
+          .nav-cta {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.75rem;
+          }
+        }
+      `}</style>
+    </nav>
+  )
+}

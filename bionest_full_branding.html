@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --forest:#1A3320;
+  --canopy:#2C6B3A;
+  --fern:#7BBF7A;
+  --sage:#A8C4A0;
+  --sand:#D4C4A0;
+  --cream:#F4EFE4;
+  --bark:#6B5A3A;
+  --mist:#E8F0E4;
+}
+body{font-family:'DM Sans',sans-serif;background:#0e1e12;color:#f4efe4;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(14,30,18,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(123,191,122,0.12)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo svg{width:32px;height:32px}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;letter-spacing:2px;color:#f4efe4}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{color:#a8c4a0;font-size:0.82rem;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:#7bbf7a}
+.nav-cta{background:transparent;border:1px solid #7bbf7a;color:#7bbf7a;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.6rem 1.4rem;cursor:pointer;transition:all 0.3s}
+.nav-cta:hover{background:#7bbf7a;color:#1a3320}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 3rem 4rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 60% 40%,rgba(44,107,58,0.22) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(123,191,122,0.08) 0%,transparent 60%),#0e1e12}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(123,191,122,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(123,191,122,0.04) 1px,transparent 1px);background-size:48px 48px}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:2rem}
+.hero-eyebrow-line{width:40px;height:1px;background:#7bbf7a}
+.hero-eyebrow-text{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:#7bbf7a}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-1px;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:#7bbf7a}
+.hero-sub{font-size:1rem;color:#a8c4a0;line-height:1.8;max-width:480px;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-primary{background:#7bbf7a;color:#1a3320;font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.9rem 2rem;border:none;cursor:pointer;transition:all 0.3s}
+.btn-primary:hover{background:#a8c4a0}
+.btn-ghost{background:transparent;color:#a8c4a0;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:1px;padding:0.9rem 1.5rem;border:1px solid rgba(168,196,160,0.3);cursor:pointer;transition:all 0.3s}
+.btn-ghost:hover{border-color:#7bbf7a;color:#7bbf7a}
+.hero-visual{position:absolute;right:3rem;top:50%;transform:translateY(-50%);z-index:2;opacity:0.9}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes spin-rev{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+.hero-ring-outer{animation:spin-slow 40s linear infinite;transform-origin:center}
+.hero-ring-inner{animation:spin-rev 25s linear infinite;transform-origin:center}
+@keyframes float{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-53%) scale(1.01)}}
+.hero-visual{animation:float 8s ease-in-out infinite}
+
+/* ── SECTION SHARED ── */
+section{padding:6rem 3rem}
+.section-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#7bbf7a;margin-bottom:0.8rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;margin-bottom:1.5rem}
+.section-title em{font-style:italic;color:#7bbf7a}
+
+/* ── ABOUT / PROMISE ── */
+.promise{background:#f4efe4;color:#1a3320}
+.promise-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1100px;margin:0 auto}
+.promise-left .section-label{color:#2c6b3a}
+.promise-left .section-title{color:#1a3320}
+.promise-left .section-title em{color:#2c6b3a}
+.promise-text{font-size:1rem;line-height:1.9;color:#4a5c4a;font-weight:300}
+.promise-right{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.promise-card{background:white;border:1px solid rgba(44,107,58,0.12);padding:1.5rem;border-radius:2px;transition:transform 0.3s,box-shadow 0.3s}
+.promise-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(44,107,58,0.1)}
+.promise-card-icon{font-size:1.6rem;margin-bottom:0.8rem}
+.promise-card-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a3320;margin-bottom:0.4rem}
+.promise-card-text{font-size:0.82rem;color:#6b7c6b;line-height:1.6}
+
+/* ── PRODUCTS ── */
+.products{background:#111e13}
+.products-inner{max-width:1100px;margin:0 auto}
+.products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.product-card{background:rgba(44,107,58,0.08);border:1px solid rgba(123,191,122,0.15);padding:2rem 1.8rem;transition:all 0.4s;position:relative;overflow:hidden;cursor:pointer}
+.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(123,191,122,0.05),transparent);opacity:0;transition:opacity 0.4s}
+.product-card:hover{border-color:rgba(123,191,122,0.4);transform:translateY(-4px)}
+.product-card:hover::before{opacity:1}
+.product-badge{display:inline-block;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#7bbf7a;border:1px solid rgba(123,191,122,0.4);padding:0.25rem 0.7rem;margin-bottom:1.2rem}
+.product-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.6rem}
+.product-desc{font-size:0.85rem;color:#a8c4a0;line-height:1.7;margin-bottom:1.5rem}
+.product-specs{display:flex;flex-direction:column;gap:0.5rem;border-top:1px solid rgba(123,191,122,0.12);padding-top:1.2rem}
+.product-spec{display:flex;justify-content:space-between;font-size:0.78rem}
+.product-spec-key{color:#6b8a6b}
+.product-spec-val{color:#a8c4a0;font-weight:500}
+
+/* ── PALETTE SECTION ── */
+.palette-section{background:#f4efe4}
+.palette-inner{max-width:1100px;margin:0 auto}
+.palette-inner .section-label{color:#2c6b3a}
+.palette-inner .section-title{color:#1a3320}
+.palette-inner .section-title em{color:#2c6b3a}
+.palette-swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:2rem;border-radius:4px;overflow:hidden}
+.swatch{height:200px;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;transition:flex 0.5s}
+.swatch:hover{flex:2}
+.swatch-name{font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;margin-bottom:0.2rem}
+.swatch-hex{font-size:0.75rem;font-family:monospace;opacity:0.7}
+
+/* ── TYPOGRAPHY SECTION ── */
+.typo-section{background:#0e1e12}
+.typo-inner{max-width:1100px;margin:0 auto}
+.typo-showcase{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.typo-block-title{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#7bbf7a;margin-bottom:1.5rem}
+.font-display-serif{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:#f4efe4;line-height:1}
+.font-display-serif em{font-style:italic;color:#7bbf7a}
+.font-sample-row{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.font-weight-demo{display:flex;align-items:baseline;gap:1rem}
+.font-weight-label{font-size:0.65rem;letter-spacing:2px;color:#6b8a6b;min-width:60px}
+.font-sans-light{font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.2rem;color:#d4c4a0}
+.font-sans-reg{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1.2rem;color:#d4c4a0}
+.font-sans-med{font-family:'DM Sans',sans-serif;font-weight:500;font-size:1.2rem;color:#d4c4a0}
+
+/* ── LOGO SECTION ── */
+.logo-section{background:#1a2e1e}
+.logo-inner{max-width:1100px;margin:0 auto}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.logo-card{border:1px solid rgba(123,191,122,0.15);padding:3rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.logo-card-dark{background:#0e1e12}
+.logo-card-light{background:#f4efe4}
+.logo-card-green{background:#2c6b3a}
+.logo-card-label{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;text-align:center}
+
+/* ── TAGLINES ── */
+.taglines-section{background:#f4efe4}
+.taglines-inner{max-width:1100px;margin:0 auto}
+.taglines-inner .section-label{color:#2c6b3a}
+.taglines-inner .section-title{color:#1a3320}
+.taglines-list{margin-top:3rem;display:flex;flex-direction:column;gap:0}
+.tagline-row{display:flex;align-items:center;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(44,107,58,0.12);cursor:pointer;transition:all 0.3s}
+.tagline-row:hover .tagline-num{color:#2c6b3a}
+.tagline-row:hover .tagline-text{color:#1a3320}
+.tagline-num{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;color:#c8d8c0;width:40px;flex-shrink:0;transition:color 0.3s}
+.tagline-text{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;color:#4a5c4a;flex:1;transition:color 0.3s}
+.tagline-context{font-size:0.75rem;letter-spacing:1.5px;text-transform:uppercase;color:#a8b8a0;min-width:140px;text-align:right}
+
+/* ── PACKAGING MOCKUP ── */
+.mockup-section{background:#111e13;padding:6rem 3rem}
+.mockup-inner{max-width:1100px;margin:0 auto;text-align:center}
+.mockup-inner .section-label{display:inline-block;margin-bottom:0.8rem}
+.pouch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.pouch-wrap{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.pouch-label-text{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#6b8a6b}
+
+/* ── FOOTER ── */
+footer{background:#0a130c;border-top:1px solid rgba(123,191,122,0.1);padding:4rem 3rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-logo-text{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#f4efe4;letter-spacing:2px;margin-bottom:0.5rem}
+.footer-tagline{font-size:0.8rem;color:#6b8a6b;line-height:1.6;max-width:220px;margin-top:0.5rem}
+.footer-col-title{font-size:0.65rem;letter-spacing:2.5px;text-transform:uppercase;color:#7bbf7a;margin-bottom:1.2rem}
+.footer-links{display:flex;flex-direction:column;gap:0.7rem}
+.footer-links a{font-size:0.85rem;color:#6b8a6b;text-decoration:none;transition:color 0.3s}
+.footer-links a:hover{color:#a8c4a0}
+.footer-bottom{border-top:1px solid rgba(123,191,122,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:0.75rem;color:#4a5c4a}
+.footer-certs{display:flex;gap:1rem}
+.cert-badge{font-size:0.65rem;letter-spacing:1px;border:1px solid rgba(123,191,122,0.25);color:#7bbf7a;padding:0.3rem 0.7rem}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp 0.7s ease forwards}
+.fade-up-1{animation-delay:0.1s}
+.fade-up-2{animation-delay:0.25s}
+.fade-up-3{animation-delay:0.4s}
+.fade-up-4{animation-delay:0.55s}
+.fade-up-5{animation-delay:0.7s}
+
+@media(max-width:700px){
+  .hero-visual{display:none}
+  .promise-inner,.products-grid,.logo-grid,.pouch-grid,.footer-top,.typo-showcase{grid-template-columns:1fr}
+  .products-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .palette-swatches{grid-template-columns:1fr}
+  .swatch{height:100px}
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  section{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="#7BBF7A" stroke-width="1"/>
+      <path d="M16 4 C22 10 22 22 16 28 C10 22 10 10 16 4Z" fill="#7BBF7A"/>
+      <line x1="16" y1="5" x2="16" y2="27" stroke="#0e1e12" stroke-width="0.8" opacity="0.5"/>
+    </svg>
+    <span class="nav-logo-text">BioNest</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Products</a>
+    <a href="#">Sustainability</a>
+    <a href="#">About</a>
+    <a href="#">Certifications</a>
+  </div>
+  <button class="nav-cta">Get a Sample</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up fade-up-1">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Biopolymer Packaging</span>
+    </div>
+    <h1 class="fade-up fade-up-2">Back to the<br><em>Earth.</em><br>Forward by<br>Design.</h1>
+    <p class="hero-sub fade-up fade-up-3">100% biodegradable pouches and poly bags — certified compostable, zero microplastic, built for a circular economy.</p>
+    <div class="hero-actions fade-up fade-up-4">
+      <button class="btn-primary">Explore Products</button>
+      <button class="btn-ghost">Our Certifications →</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg width="340" height="340" viewBox="0 0 340 340">
+      <g transform="translate(170,170)">
+        <g class="hero-ring-outer">
+          <circle cx="0" cy="0" r="155" fill="none" stroke="rgba(123,191,122,0.15)" stroke-width="1"/>
+          <circle cx="0" cy="-155" r="4" fill="#7bbf7a" opacity="0.6"/>
+          <circle cx="155" cy="0" r="4" fill="#7bbf7a" opacity="0.6"/>
+          <circle cx="0" cy="155" r="4" fill="#7bbf7a" opacity="0.6"/>
+          <circle cx="-155" cy="0" r="4" fill="#7bbf7a" opacity="0.6"/>
+        </g>
+        <g class="hero-ring-inner">
+          <circle cx="0" cy="0" r="120" fill="none" stroke="rgba(123,191,122,0.1)" stroke-width="1" stroke-dasharray="4 6"/>
+        </g>
+        <circle cx="0" cy="0" r="90" fill="rgba(26,51,32,0.8)" stroke="rgba(123,191,122,0.25)" stroke-width="1"/>
+        <path d="M0,-60 C28,-28 32,16 0,60 C-32,16 -28,-28 0,-60Z" fill="#7bbf7a" opacity="0.9"/>
+        <line x1="0" y1="-52" x2="0" y2="52" stroke="#0e1e12" stroke-width="1.2" opacity="0.4"/>
+        <path d="M0,-36 C10,-18 12,6 0,36 C-12,6 -10,-18 0,-36Z" fill="#a8c4a0" opacity="0.5"/>
+        <text x="0" y="82" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="7" letter-spacing="3" fill="#6b8a6b" text-transform="uppercase">BIODEGRADABLE</text>
+        <path d="M-90,0 A90,90 0 0,1 90,0" fill="none" stroke="rgba(123,191,122,0.2)" stroke-width="0.5" stroke-dasharray="3 4"/>
+        <path d="M90,0 A90,90 0 0,1 -90,0" fill="none" stroke="rgba(168,196,160,0.15)" stroke-width="0.5" stroke-dasharray="3 4"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise">
+  <div class="promise-inner">
+    <div class="promise-left">
+      <p class="section-label">Our Promise</p>
+      <h2 class="section-title">Nature's package.<br><em>Your promise.</em></h2>
+      <p class="promise-text">BioNest manufactures biodegradable plastic pouches and poly bags from plant-derived biopolymers. Every product is certified compostable — returning to soil within 180 days, leaving zero microplastics behind. We believe sustainable packaging should be as strong and reliable as conventional plastic.</p>
+    </div>
+    <div class="promise-right">
+      <div class="promise-card">
+        <div class="promise-card-icon">🌿</div>
+        <div class="promise-card-title">Plant-derived</div>
+        <div class="promise-card-text">Made from PHA and PLA — sugarcane, corn starch, and cellulose.</div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-icon">♻</div>
+        <div class="promise-card-title">Circular design</div>
+        <div class="promise-card-text">Closes the loop — compostable in home and industrial facilities.</div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-icon">🔬</div>
+        <div class="promise-card-title">Lab certified</div>
+        <div class="promise-card-text">EN 13432, ASTM D6400, and BIS 17088 compliant.</div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-icon">💪</div>
+        <div class="promise-card-title">No compromise</div>
+        <div class="promise-card-text">Tensile strength and barrier properties equal conventional LDPE.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="products-inner">
+    <div class="products-header">
+      <div>
+        <p class="section-label">Product Range</p>
+        <h2 class="section-title">Packaging that <em>gives back</em></h2>
+      </div>
+      <button class="btn-ghost">View all products →</button>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-badge">Bestseller</div>
+        <div class="product-name">BioSeal Pouch</div>
+        <div class="product-desc">Stand-up zipper pouch for food, spices, and organic goods. Full compostable layers with moisture barrier.</div>
+        <div class="product-specs">
+          <div class="product-spec"><span class="product-spec-key">Material</span><span class="product-spec-val">PHA + PLA blend</span></div>
+          <div class="product-spec"><span class="product-spec-key">Sizes</span><span class="product-spec-val">50g – 5kg</span></div>
+          <div class="product-spec"><span class="product-spec-key">Decompose</span><span class="product-spec-val">90–180 days</span></div>
+          <div class="product-spec"><span class="product-spec-key">MOQ</span><span class="product-spec-val">5,000 units</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <div class="product-name">EcoFlex Bag</div>
+        <div class="product-desc">Flat poly bag for retail, garments, and e-commerce. Prints beautifully with soy-based inks.</div>
+        <div class="product-specs">
+          <div class="product-spec"><span class="product-spec-key">Material</span><span class="product-spec-val">PBAT + Starch</span></div>
+          <div class="product-spec"><span class="product-spec-key">Sizes</span><span class="product-spec-val">Custom</span></div>
+          <div class="product-spec"><span class="product-spec-key">Decompose</span><span class="product-spec-val">60–120 days</span></div>
+          <div class="product-spec"><span class="product-spec-key">MOQ</span><span class="product-spec-val">10,000 units</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">Industrial</div>
+        <div class="product-name">TerraWrap Roll</div>
+        <div class="product-desc">Industrial-grade compostable wrap and liner rolls for warehousing, agriculture, and bulk packing.</div>
+        <div class="product-specs">
+          <div class="product-spec"><span class="product-spec-key">Material</span><span class="product-spec-val">PLA composite</span></div>
+          <div class="product-spec"><span class="product-spec-key">Width</span><span class="product-spec-val">12" – 60"</span></div>
+          <div class="product-spec"><span class="product-spec-key">Decompose</span><span class="product-spec-val">120–240 days</span></div>
+          <div class="product-spec"><span class="product-spec-key">MOQ</span><span class="product-spec-val">500 kg</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOR PALETTE -->
+<section class="palette-section">
+  <div class="palette-inner">
+    <p class="section-label">Brand Identity · Colors</p>
+    <h2 class="section-title">A palette <em>rooted in nature</em></h2>
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#1A3320;flex:1">
+        <div class="swatch-name" style="color:#a8c4a0">Forest Deep</div>
+        <div class="swatch-hex" style="color:#6b8a6b">#1A3320</div>
+      </div>
+      <div class="swatch" style="background:#2C6B3A;flex:1">
+        <div class="swatch-name" style="color:#b8d8b8">Canopy</div>
+        <div class="swatch-hex" style="color:#7aaf7a">#2C6B3A</div>
+      </div>
+      <div class="swatch" style="background:#7BBF7A;flex:1">
+        <div class="swatch-name" style="color:#1a3320">Fern</div>
+        <div class="swatch-hex" style="color:#2c6b3a">#7BBF7A</div>
+      </div>
+      <div class="swatch" style="background:#D4C4A0;flex:1">
+        <div class="swatch-name" style="color:#4a3c20">Earth Sand</div>
+        <div class="swatch-hex" style="color:#6a5a30">#D4C4A0</div>
+      </div>
+      <div class="swatch" style="background:#F4EFE4;flex:1;border:1px solid #e0d8cc">
+        <div class="swatch-name" style="color:#4a3c20">Natural Cream</div>
+        <div class="swatch-hex" style="color:#6a5a30">#F4EFE4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="typo-section">
+  <div class="typo-inner">
+    <p class="section-label">Brand Identity · Typography</p>
+    <h2 class="section-title">Voices of the <em>forest</em></h2>
+    <div class="typo-showcase">
+      <div>
+        <p class="typo-block-title">Display · Playfair Display</p>
+        <div class="font-display-serif">Bio<em>Nest</em></div>
+        <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#a8c4a0;margin-top:1rem;font-style:italic;font-weight:400">"Wrap the World in Green."</p>
+        <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#6b8a6b;margin-top:0.8rem;line-height:1.7">Headlines · Taglines · Pull quotes · Logo wordmark</p>
+      </div>
+      <div>
+        <p class="typo-block-title">Body · DM Sans</p>
+        <div class="font-sample-row">
+          <div class="font-weight-demo">
+            <span class="font-weight-label">Light 300</span>
+            <span class="font-sans-light">Biodegradable packaging solutions</span>
+          </div>
+          <div class="font-weight-demo">
+            <span class="font-weight-label">Regular 400</span>
+            <span class="font-sans-reg">Biodegradable packaging solutions</span>
+          </div>
+          <div class="font-weight-demo">
+            <span class="font-weight-label">Medium 500</span>
+            <span class="font-sans-med">Biodegradable packaging solutions</span>
+          </div>
+        </div>
+        <p style="font-size:0.82rem;color:#6b8a6b;margin-top:1.5rem;line-height:1.7">Body text · Navigation · Labels · UI elements · Product specs</p>
+        <div style="margin-top:1.5rem;padding:1.2rem;border:1px solid rgba(123,191,122,0.15);border-left:3px solid #7bbf7a">
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:#a8c4a0;line-height:1.8">Min size: 12px body · 10px labels<br>Line height: 1.7–1.9 for body · 1.1–1.2 for display<br>Tracking: +1.5–3px uppercase labels</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO VARIATIONS -->
+<section class="logo-section">
+  <div class="logo-inner">
+    <p class="section-label">Brand Identity · Logo</p>
+    <h2 class="section-title">Mark of <em>origin</em></h2>
+    <div class="logo-grid">
+      <!-- Dark bg -->
+      <div class="logo-card logo-card-dark">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="22" fill="none" stroke="#7BBF7A" stroke-width="1.2"/>
+          <path d="M24 6 C33 14 33 34 24 42 C15 34 15 14 24 6Z" fill="#7BBF7A"/>
+          <line x1="24" y1="7" x2="24" y2="41" stroke="#0e1e12" stroke-width="1" opacity="0.4"/>
+        </svg>
+        <div style="text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#f4efe4;letter-spacing:2px">BioNest</div>
+          <div style="font-size:0.6rem;letter-spacing:3px;color:#7bbf7a;margin-top:2px">BIOPOLYMERS</div>
+        </div>
+        <div class="logo-card-label" style="color:#4a6a4a">On dark · Primary use</div>
+      </div>
+      <!-- Light bg -->
+      <div class="logo-card logo-card-light">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="22" fill="none" stroke="#2C6B3A" stroke-width="1.2"/>
+          <path d="M24 6 C33 14 33 34 24 42 C15 34 15 14 24 6Z" fill="#2C6B3A"/>
+          <line x1="24" y1="7" x2="24" y2="41" stroke="#f4efe4" stroke-width="1" opacity="0.4"/>
+        </svg>
+        <div style="text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1a3320;letter-spacing:2px">BioNest</div>
+          <div style="font-size:0.6rem;letter-spacing:3px;color:#2c6b3a;margin-top:2px">BIOPOLYMERS</div>
+        </div>
+        <div class="logo-card-label" style="color:#a8b8a0">On light · Print use</div>
+      </div>
+      <!-- Green bg -->
+      <div class="logo-card logo-card-green">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="22" fill="none" stroke="#f4efe4" stroke-width="1.2" opacity="0.6"/>
+          <path d="M24 6 C33 14 33 34 24 42 C15 34 15 14 24 6Z" fill="#f4efe4"/>
+          <line x1="24" y1="7" x2="24" y2="41" stroke="#2c6b3a" stroke-width="1" opacity="0.4"/>
+        </svg>
+        <div style="text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#f4efe4;letter-spacing:2px">BioNest</div>
+          <div style="font-size:0.6rem;letter-spacing:3px;color:rgba(244,239,228,0.7);margin-top:2px">BIOPOLYMERS</div>
+        </div>
+        <div class="logo-card-label" style="color:rgba(244,239,228,0.5)">On brand green · Special use</div>
+      </div>
+      <!-- Icon only -->
+      <div class="logo-card logo-card-dark">
+        <svg width="64" height="64" viewBox="0 0 64 64">
+          <rect x="4" y="4" width="56" height="56" rx="4" fill="none" stroke="rgba(123,191,122,0.3)" stroke-width="1"/>
+          <circle cx="32" cy="32" r="22" fill="none" stroke="#7BBF7A" stroke-width="1"/>
+          <path d="M32 12 C42 20 42 44 32 52 C22 44 22 20 32 12Z" fill="#7BBF7A"/>
+          <line x1="32" y1="13" x2="32" y2="51" stroke="#0e1e12" stroke-width="1.2" opacity="0.4"/>
+        </svg>
+        <div class="logo-card-label" style="color:#4a6a4a">Icon only · App / stamp</div>
+      </div>
+      <!-- Horizontal -->
+      <div class="logo-card logo-card-dark" style="grid-column:span 2">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg width="36" height="36" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="22" fill="none" stroke="#7BBF7A" stroke-width="1.2"/>
+            <path d="M24 6 C33 14 33 34 24 42 C15 34 15 14 24 6Z" fill="#7BBF7A"/>
+            <line x1="24" y1="7" x2="24" y2="41" stroke="#0e1e12" stroke-width="1" opacity="0.4"/>
+          </svg>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:#f4efe4;letter-spacing:2px">BioNest</div>
+            <div style="font-size:0.6rem;letter-spacing:3px;color:#7bbf7a;margin-top:1px">BIOPOLYMERS · BIODEGRADABLE PACKAGING</div>
+          </div>
+        </div>
+        <div class="logo-card-label" style="color:#4a6a4a">Horizontal · Letterhead / invoice</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINES -->
+<section class="taglines-section">
+  <div class="taglines-inner">
+    <p class="section-label">Brand Identity · Voice</p>
+    <h2 class="section-title">What BioNest <em>says</em></h2>
+    <div class="taglines-list">
+      <div class="tagline-row">
+        <div class="tagline-num">01</div>
+        <div class="tagline-text">"Back to the Earth. Forward by Design."</div>
+        <div class="tagline-context">B2B · Corporate</div>
+      </div>
+      <div class="tagline-row">
+        <div class="tagline-num">02</div>
+        <div class="tagline-text">"Wrap the World in Green."</div>
+        <div class="tagline-context">Consumer · Retail</div>
+      </div>
+      <div class="tagline-row">
+        <div class="tagline-num">03</div>
+        <div class="tagline-text">"Nature's Package. Your Promise."</div>
+        <div class="tagline-context">Certification · Trust</div>
+      </div>
+      <div class="tagline-row">
+        <div class="tagline-num">04</div>
+        <div class="tagline-text">"From Plant to Pouch to Earth."</div>
+        <div class="tagline-context">Lifecycle · Story</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGING MOCKUP -->
+<section class="mockup-section">
+  <div class="mockup-inner">
+    <p class="section-label">Brand in Action · Packaging</p>
+    <h2 class="section-title">See the <em>difference</em></h2>
+    <div class="pouch-grid">
+      <!-- Pouch 1 -->
+      <div class="pouch-wrap">
+        <svg width="180" height="260" viewBox="0 0 180 260">
+          <defs>
+            <clipPath id="pc1"><rect x="30" y="20" width="120" height="200" rx="12"/></clipPath>
+          </defs>
+          <rect x="30" y="20" width="120" height="200" rx="12" fill="#1A3320" stroke="rgba(123,191,122,0.3)" stroke-width="1"/>
+          <rect x="30" y="20" width="120" height="200" rx="12" fill="none" stroke="#7bbf7a" stroke-width="0.5" opacity="0.4"/>
+          <path d="M50 90 C80 60 100 60 130 90" fill="none" stroke="rgba(123,191,122,0.15)" stroke-width="40"/>
+          <circle cx="90" cy="95" r="28" fill="none" stroke="#7bbf7a" stroke-width="0.8" opacity="0.4"/>
+          <path d="M90 72 C100 82 102 108 90 118 C78 108 80 82 90 72Z" fill="#7bbf7a" opacity="0.8"/>
+          <text x="90" y="148" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" font-weight="700" fill="#f4efe4" letter-spacing="2">BioNest</text>
+          <text x="90" y="162" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#7bbf7a" letter-spacing="2">BIOPOLYMERS</text>
+          <text x="90" y="178" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#6b8a6b">500g · Compostable</text>
+          <rect x="55" y="205" width="70" height="6" rx="3" fill="#7bbf7a" opacity="0.3"/>
+        </svg>
+        <div class="pouch-label-text">BioSeal Pouch — Forest</div>
+      </div>
+      <!-- Pouch 2 -->
+      <div class="pouch-wrap">
+        <svg width="180" height="260" viewBox="0 0 180 260">
+          <rect x="30" y="20" width="120" height="200" rx="12" fill="#f4efe4" stroke="rgba(44,107,58,0.2)" stroke-width="1"/>
+          <rect x="30" y="20" width="120" height="200" rx="12" fill="none" stroke="#2c6b3a" stroke-width="0.5" opacity="0.5"/>
+          <rect x="30" y="20" width="120" height="70" rx="12" fill="#d4c4a0" opacity="0.5"/>
+          <rect x="30" y="70" width="120" height="20" fill="#d4c4a0" opacity="0.3"/>
+          <circle cx="90" cy="110" r="28" fill="none" stroke="#2c6b3a" stroke-width="0.8" opacity="0.3"/>
+          <path d="M90 87 C100 97 102 123 90 133 C78 123 80 97 90 87Z" fill="#2c6b3a" opacity="0.85"/>
+          <text x="90" y="162" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" font-weight="700" fill="#1a3320" letter-spacing="2">BioNest</text>
+          <text x="90" y="176" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#2c6b3a" letter-spacing="2">BIOPOLYMERS</text>
+          <text x="90" y="192" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#6b7c6b">EcoFlex · 100% Compostable</text>
+          <rect x="55" y="205" width="70" height="6" rx="3" fill="#2c6b3a" opacity="0.2"/>
+        </svg>
+        <div class="pouch-label-text">EcoFlex Bag — Cream</div>
+      </div>
+      <!-- Pouch 3 -->
+      <div class="pouch-wrap">
+        <svg width="180" height="260" viewBox="0 0 180 260">
+          <rect x="30" y="20" width="120" height="200" rx="12" fill="#2c6b3a" stroke="rgba(244,239,228,0.2)" stroke-width="1"/>
+          <path d="M30 20 Q90 50 150 20 L150 220 Q90 195 30 220Z" fill="rgba(244,239,228,0.04)"/>
+          <circle cx="90" cy="95" r="28" fill="none" stroke="rgba(244,239,228,0.25)" stroke-width="1"/>
+          <path d="M90 72 C100 82 102 108 90 118 C78 108 80 82 90 72Z" fill="#f4efe4" opacity="0.9"/>
+          <text x="90" y="148" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" font-weight="700" fill="#f4efe4" letter-spacing="2">BioNest</text>
+          <text x="90" y="162" text-anchor="middle" font-family="sans-serif" font-size="6" fill="rgba(244,239,228,0.6)" letter-spacing="2">BIOPOLYMERS</text>
+          <text x="90" y="178" text-anchor="middle" font-family="sans-serif" font-size="7" fill="rgba(244,239,228,0.4)">Premium · 250g</text>
+          <rect x="55" y="205" width="70" height="6" rx="3" fill="rgba(244,239,228,0.15)"/>
+        </svg>
+        <div class="pouch-label-text">BioSeal Pouch — Canopy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.5rem">
+          <svg width="28" height="28" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="#7BBF7A" stroke-width="1.2"/><path d="M24 6 C33 14 33 34 24 42 C15 34 15 14 24 6Z" fill="#7BBF7A"/></svg>
+          <div class="footer-logo-text">BioNest</div>
+        </div>
+        <div style="font-size:0.65rem;letter-spacing:2px;color:#4a6a4a;margin-bottom:0.8rem">BIOPOLYMERS PVT. LTD.</div>
+        <div class="footer-tagline">Back to the Earth. Forward by Design. Crafting biodegradable packaging for a circular economy — Bengaluru, India.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <div class="footer-links">
+          <a href="#">BioSeal Pouches</a>
+          <a href="#">EcoFlex Bags</a>
+          <a href="#">TerraWrap Rolls</a>
+          <a href="#">Custom Solutions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#">About BioNest</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Certifications</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="#">Get a Sample</a>
+          <a href="#">Bulk Enquiry</a>
+          <a href="#">hello@bionest.in</a>
+          <a href="#">+91 80 0000 0000</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 BioNest Biopolymers Pvt. Ltd. All rights reserved.</div>
+      <div class="footer-certs">
+        <div class="cert-badge">EN 13432</div>
+        <div class="cert-badge">ASTM D6400</div>
+        <div class="cert-badge">BIS 17088</div>
+        <div class="cert-badge">Zero Microplastic</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
