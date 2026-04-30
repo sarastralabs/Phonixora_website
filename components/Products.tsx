@@ -9,75 +9,63 @@ export default function Products() {
         <div className="products-header">
           <div className="header-content">
             <p className="section-label">Our Products</p>
-            <h2 className="section-title">Solutions that <em>make a difference</em></h2>
-            <p className="section-subtitle">Discover our range of certified biodegradable packaging solutions designed for various industries and applications.</p>
+            <h2 className="section-title">Bio-Polymer <em>Solutions</em></h2>
+            <p className="section-subtitle">Discover our range of eco-friendly bio-polymer materials designed for packaging, agriculture, and industrial applications.</p>
           </div>
           <div className="header-actions">
             <button className="filter-btn active">All Products</button>
-            <button className="filter-btn">Food Grade</button>
+            <button className="filter-btn">Packaging</button>
+            <button className="filter-btn">Agriculture</button>
             <button className="filter-btn">Industrial</button>
           </div>
         </div>
         <div className="products-grid">
           <div className="product-card">
             <div className="product-image">
-              <div className="placeholder-bag">
-                <svg viewBox="0 0 200 280" className="bag-svg">
-                  <defs>
-                    <linearGradient id="bagGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#7bbf7a', stopOpacity: 0.3}} />
-                      <stop offset="100%" style={{stopColor: '#2c6b3a', stopOpacity: 0.4}} />
-                    </linearGradient>
-                  </defs>
-                  <rect x="40" y="60" width="120" height="180" rx="8" fill="url(#bagGrad1)" stroke="#7bbf7a" strokeWidth="2"/>
-                  <rect x="40" y="40" width="120" height="25" rx="4" fill="rgba(123,191,122,0.2)" stroke="#7bbf7a" strokeWidth="1.5"/>
-                  <circle cx="70" cy="52" r="6" fill="none" stroke="#7bbf7a" strokeWidth="2"/>
-                  <circle cx="130" cy="52" r="6" fill="none" stroke="#7bbf7a" strokeWidth="2"/>
-                  <path d="M 80 120 Q 100 140 120 120" stroke="#a8c4a0" strokeWidth="2" fill="none"/>
-                  <text x="100" y="160" textAnchor="middle" fill="#2c6b3a" fontSize="12" fontWeight="600">ECO</text>
-                </svg>
-              </div>
+              <img 
+                src="/images/granuals.png" 
+                alt="Bio-Polymer Granules"
+                className="product-real-image"
+              />
               <div className="product-badge-top">Popular</div>
             </div>
             <div className="product-content">
               <div className="product-header-row">
-                <div className="product-name">EcoPouch Pro</div>
-                <div className="product-price">From $0.45</div>
+                <div className="product-name">Bio-Polymer Granules</div>
               </div>
               <div className="product-desc">
-                Premium stand-up pouches perfect for food products, snacks, and organic goods. 
-                Fully compostable with excellent moisture barrier.
+                Eco-friendly granules suitable for industrial applications. Biodegradable, durable, and high-performance alternative to conventional plastics.
               </div>
               <div className="product-specs">
                 <div className="product-spec">
-                  <span className="product-spec-key">Material</span>
-                  <span className="product-spec-val">Plant-based PLA</span>
+                  <span className="product-spec-key">Features</span>
+                  <span className="product-spec-val">Biodegradable</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Grade</span>
-                  <span className="product-spec-val">Food Grade</span>
+                  <span className="product-spec-key">Performance</span>
+                  <span className="product-spec-val">High Durability</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Sizes</span>
-                  <span className="product-spec-val">100g – 5kg</span>
+                  <span className="product-spec-key">Applications</span>
+                  <span className="product-spec-val">Packaging, Bags</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Biodegrades</span>
-                  <span className="product-spec-val">90–180 days</span>
+                  <span className="product-spec-key">Composting</span>
+                  <span className="product-spec-val">Yes</span>
                 </div>
               </div>
               <div className="product-certifications">
                 <div className="cert-badge-small">
                   <Shield size={14} />
-                  <span>EN 13432</span>
+                  <span>Eco-Friendly</span>
                 </div>
                 <div className="cert-badge-small">
                   <Award size={14} />
-                  <span>ASTM D6400</span>
+                  <span>Biodegradable</span>
                 </div>
                 <div className="cert-badge-small">
                   <CheckCircle size={14} />
-                  <span>BIS 17088</span>
+                  <span>Certified</span>
                 </div>
               </div>
               <button className="product-cta">
@@ -91,63 +79,50 @@ export default function Products() {
 
           <div className="product-card">
             <div className="product-image">
-              <div className="placeholder-bag">
-                <svg viewBox="0 0 200 280" className="bag-svg">
-                  <defs>
-                    <linearGradient id="bagGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#a8c4a0', stopOpacity: 0.3}} />
-                      <stop offset="100%" style={{stopColor: '#7bbf7a', stopOpacity: 0.4}} />
-                    </linearGradient>
-                  </defs>
-                  <rect x="50" y="50" width="100" height="190" rx="6" fill="url(#bagGrad2)" stroke="#7bbf7a" strokeWidth="2"/>
-                  <rect x="50" y="35" width="100" height="20" rx="3" fill="rgba(168,196,160,0.2)" stroke="#7bbf7a" strokeWidth="1.5"/>
-                  <line x1="75" y1="100" x2="125" y2="100" stroke="#a8c4a0" strokeWidth="2"/>
-                  <line x1="75" y1="120" x2="125" y2="120" stroke="#a8c4a0" strokeWidth="2"/>
-                  <circle cx="100" cy="160" r="20" fill="none" stroke="#7bbf7a" strokeWidth="2"/>
-                  <path d="M 90 160 L 95 165 L 110 150" stroke="#7bbf7a" strokeWidth="2.5" fill="none"/>
-                </svg>
-              </div>
+              <img 
+                src="/images/carry bag.png" 
+                alt="Biodegradable Carry Bags"
+                className="product-real-image"
+              />
               <div className="product-badge-top bestseller">Bestseller</div>
             </div>
             <div className="product-content">
               <div className="product-header-row">
-                <div className="product-name">FlexiBag Green</div>
-                <div className="product-price">From $0.32</div>
+                <div className="product-name">Biodegradable Carry Bags</div>
               </div>
               <div className="product-desc">
-                Versatile flat bags ideal for retail, e-commerce, and general packaging. 
-                Strong, flexible, and completely eco-friendly.
+                Eco-friendly alternative to conventional plastic bags. Perfect for retail, packaging, and everyday use with excellent strength.
               </div>
               <div className="product-specs">
                 <div className="product-spec">
                   <span className="product-spec-key">Material</span>
-                  <span className="product-spec-val">PBAT blend</span>
+                  <span className="product-spec-val">Bio-Polymer</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Grade</span>
-                  <span className="product-spec-val">Industrial Grade</span>
+                  <span className="product-spec-key">Type</span>
+                  <span className="product-spec-val">Carry Bags</span>
                 </div>
                 <div className="product-spec">
                   <span className="product-spec-key">Sizes</span>
-                  <span className="product-spec-val">Custom sizes</span>
+                  <span className="product-spec-val">Custom Sizes</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Biodegrades</span>
-                  <span className="product-spec-val">60–120 days</span>
+                  <span className="product-spec-key">Composting</span>
+                  <span className="product-spec-val">Biodegradable</span>
                 </div>
               </div>
               <div className="product-certifications">
                 <div className="cert-badge-small">
                   <Shield size={14} />
-                  <span>ISO 14855</span>
+                  <span>Environment Safe</span>
                 </div>
                 <div className="cert-badge-small">
                   <Award size={14} />
-                  <span>OK Compost</span>
+                  <span>Compostable</span>
                 </div>
                 <div className="cert-badge-small">
                   <CheckCircle size={14} />
-                  <span>TUV Certified</span>
+                  <span>Certified</span>
                 </div>
               </div>
               <button className="product-cta">
@@ -161,63 +136,50 @@ export default function Products() {
 
           <div className="product-card">
             <div className="product-image">
-              <div className="placeholder-bag">
-                <svg viewBox="0 0 200 280" className="bag-svg">
-                  <defs>
-                    <linearGradient id="bagGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#2c6b3a', stopOpacity: 0.3}} />
-                      <stop offset="100%" style={{stopColor: '#1a3320', stopOpacity: 0.4}} />
-                    </linearGradient>
-                  </defs>
-                  <rect x="35" y="40" width="130" height="200" rx="10" fill="url(#bagGrad3)" stroke="#7bbf7a" strokeWidth="2.5"/>
-                  <rect x="60" y="60" width="80" height="60" rx="4" fill="rgba(123,191,122,0.15)" stroke="#7bbf7a" strokeWidth="1"/>
-                  <circle cx="100" cy="90" r="15" fill="rgba(123,191,122,0.2)" stroke="#7bbf7a" strokeWidth="1.5"/>
-                  <path d="M 100 80 L 100 100 M 90 90 L 110 90" stroke="#7bbf7a" strokeWidth="2"/>
-                  <rect x="70" y="150" width="60" height="8" rx="4" fill="rgba(168,196,160,0.3)"/>
-                  <rect x="70" y="170" width="60" height="8" rx="4" fill="rgba(168,196,160,0.3)"/>
-                </svg>
-              </div>
-              <div className="product-badge-top industrial">Industrial</div>
+              <img 
+                src="/images/custom bags.png" 
+                alt="Custom Bio-Polymer Solutions"
+                className="product-real-image"
+              />
+              <div className="product-badge-top industrial">Custom</div>
             </div>
             <div className="product-content">
               <div className="product-header-row">
-                <div className="product-name">BioWrap Roll</div>
-                <div className="product-price">From $0.58</div>
+                <div className="product-name">Custom Bio-Polymer Solutions</div>
               </div>
               <div className="product-desc">
-                Heavy-duty compostable wrap for industrial applications, agriculture, 
-                and bulk packaging needs.
+                Tailored bio-polymer products designed to meet specific client requirements. Custom sizes, grades, and industry-specific applications.
               </div>
               <div className="product-specs">
                 <div className="product-spec">
-                  <span className="product-spec-key">Material</span>
-                  <span className="product-spec-val">PHA composite</span>
+                  <span className="product-spec-key">Customization</span>
+                  <span className="product-spec-val">Custom Grades</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Grade</span>
-                  <span className="product-spec-val">Heavy Duty</span>
+                  <span className="product-spec-key">Applications</span>
+                  <span className="product-spec-val">Industry Specific</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Width</span>
-                  <span className="product-spec-val">12" – 60"</span>
+                  <span className="product-spec-key">Production</span>
+                  <span className="product-spec-val">Flexible</span>
                 </div>
                 <div className="product-spec">
-                  <span className="product-spec-key">Biodegrades</span>
-                  <span className="product-spec-val">120–240 days</span>
+                  <span className="product-spec-key">Uses</span>
+                  <span className="product-spec-val">Multi-Industry</span>
                 </div>
               </div>
               <div className="product-certifications">
                 <div className="cert-badge-small">
                   <Shield size={14} />
-                  <span>EN 13432</span>
+                  <span>Custom Made</span>
                 </div>
                 <div className="cert-badge-small">
                   <Award size={14} />
-                  <span>ASTM D6868</span>
+                  <span>Quality Assured</span>
                 </div>
                 <div className="cert-badge-small">
                   <CheckCircle size={14} />
-                  <span>FDA Approved</span>
+                  <span>Certified</span>
                 </div>
               </div>
               <button className="product-cta">
@@ -343,6 +305,16 @@ export default function Products() {
           position: absolute;
           inset: 0;
           background: radial-gradient(circle at 50% 50%, rgba(123,191,122,0.1) 0%, transparent 70%);
+        }
+        .product-real-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transition: transform 0.4s;
+        }
+        .product-card:hover .product-real-image {
+          transform: scale(1.05);
         }
         .placeholder-bag {
           width: 100%;

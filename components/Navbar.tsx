@@ -1,8 +1,21 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <nav className="nav">
+    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-logo">
         <img src="/logo.png" alt="Phonixora Logo" className="nav-logo-img" />
         <span className="nav-logo-text">Phonixora</span>
@@ -26,6 +39,13 @@ export default function Navbar() {
           align-items: center;
           justify-content: space-between;
           padding: 1.5rem 4rem;
+          background: transparent;
+          backdrop-filter: none;
+          border-bottom: 1px solid transparent;
+          box-shadow: none;
+          transition: all 0.3s ease;
+        }
+        .nav.scrolled {
           background: rgba(14, 30, 18, 0.7);
           backdrop-filter: blur(20px) saturate(180%);
           border-bottom: 1px solid rgba(123, 191, 122, 0.1);
@@ -63,13 +83,18 @@ export default function Navbar() {
           gap: 3rem;
         }
         .nav-links a {
-          color: #d4c4a0;
+          color: #1a3320;
           font-size: 0.9rem;
-          font-weight: 500;
+          font-weight: 700;
           letter-spacing: 0.5px;
           text-decoration: none;
           position: relative;
           transition: color 0.3s;
+          text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+        }
+        .nav.scrolled .nav-links a {
+          color: #d4c4a0;
+          text-shadow: none;
         }
         .nav-links a::after {
           content: '';
@@ -88,21 +113,29 @@ export default function Navbar() {
           width: 100%;
         }
         .nav-cta {
-          background: linear-gradient(135deg, #7bbf7a 0%, #2c6b3a 100%);
+          background: linear-gradient(135deg, #f4efe4 0%, #d4c4a0 100%);
           border: none;
-          color: white;
+          color: #1a3320;
           font-family: var(--font-dm-sans);
           font-size: 0.85rem;
-          font-weight: 500;
+          font-weight: 600;
           letter-spacing: 0.5px;
           padding: 0.75rem 1.8rem;
           border-radius: 50px;
           cursor: pointer;
           transition: all 0.3s;
+          box-shadow: 0 4px 15px rgba(244, 239, 228, 0.3);
+        }
+        .nav.scrolled .nav-cta {
+          background: linear-gradient(135deg, #7bbf7a 0%, #2c6b3a 100%);
+          color: white;
           box-shadow: 0 4px 15px rgba(123, 191, 122, 0.3);
         }
         .nav-cta:hover {
           transform: translateY(-2px);
+          box-shadow: 0 6px 25px rgba(244, 239, 228, 0.5);
+        }
+        .nav.scrolled .nav-cta:hover {
           box-shadow: 0 6px 25px rgba(123, 191, 122, 0.4);
         }
         @media (max-width: 1024px) {

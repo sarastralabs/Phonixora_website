@@ -6,7 +6,7 @@ export default function Contact() {
   const handleWhatsAppClick = () => {
     // Replace with your actual WhatsApp number (format: country code + number without + or spaces)
     const phoneNumber = '1234567890' // Example: 1234567890 for +1 234-567-890
-    const message = encodeURIComponent('Hi! I would like to know more about Phonixora\'s biodegradable packaging solutions.')
+    const message = encodeURIComponent('Hi! I would like to know more about Phonixora Bio-Polymer\'s eco-friendly bio-polymer materials.')
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
 
@@ -14,10 +14,10 @@ export default function Contact() {
     <section id="contact" className="contact">
       <div className="contact-inner">
         <div className="contact-left">
-          <p className="section-label">Get In Touch</p>
+          <p className="section-label">Contact Us</p>
           <h2 className="section-title">Let's create a <em>sustainable future</em> together</h2>
           <p className="contact-text">
-            Ready to make the switch to eco-friendly packaging? Our team is here to help 
+            Ready to make the switch to eco-friendly bio-polymer materials? Our team is here to help 
             you find the perfect solution for your business needs.
           </p>
           <div className="contact-info">
@@ -27,7 +27,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact-item-label">Email</div>
-                <div className="contact-item-value">hello@phonixora.com</div>
+                <div className="contact-item-value">info@phonixora.com</div>
               </div>
             </div>
             <div className="contact-item">
@@ -36,7 +36,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact-item-label">Phone</div>
-                <div className="contact-item-value">+1 (555) 123-4567</div>
+                <div className="contact-item-value">+91 [Your Number]</div>
               </div>
             </div>
             <div className="contact-item">
@@ -44,8 +44,8 @@ export default function Contact() {
                 <MapPin size={24} strokeWidth={1.5} />
               </div>
               <div>
-                <div className="contact-item-label">Location</div>
-                <div className="contact-item-value">Chikkamagaluru, Bangalore</div>
+                <div className="contact-item-label">Address</div>
+                <div className="contact-item-value">[Your Address]</div>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function Contact() {
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows={4} placeholder="Tell us about your packaging needs..."></textarea>
+              <textarea id="message" rows={4} placeholder="Tell us about your bio-polymer requirements..."></textarea>
             </div>
             <button type="submit" className="btn-submit">Send Message</button>
           </form>

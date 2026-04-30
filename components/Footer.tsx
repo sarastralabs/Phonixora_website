@@ -11,7 +11,7 @@ export default function Footer() {
               <span className="footer-logo-text">Phonixora</span>
             </div>
             <p className="footer-tagline">
-              Pioneering sustainable packaging solutions for a greener tomorrow.
+              Leading manufacturer of eco-friendly bio-polymer materials for a sustainable future.
             </p>
           </div>
           <div>
@@ -19,34 +19,35 @@ export default function Footer() {
             <div className="footer-links">
               <a href="#about">About Us</a>
               <a href="#products">Products</a>
-              <a href="#">Sustainability</a>
-              <a href="#">Careers</a>
+              <a href="#about">Vision & Mission</a>
+              <a href="#about">Core Values</a>
             </div>
           </div>
           <div>
-            <div className="footer-col-title">Support</div>
+            <div className="footer-col-title">Products</div>
             <div className="footer-links">
-              <a href="#contact">Contact</a>
-              <a href="#">FAQ</a>
-              <a href="#">Documentation</a>
-              <a href="#">Resources</a>
+              <a href="#products">Bio-Polymer Granules</a>
+              <a href="#products">Carry Bags</a>
+              <a href="#products">Agricultural Films</a>
+              <a href="#products">Custom Solutions</a>
             </div>
           </div>
           <div>
-            <div className="footer-col-title">Legal</div>
+            <div className="footer-col-title">Contact</div>
             <div className="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
+              <a href="#contact">Get In Touch</a>
+              <a href="#about">Sustainability</a>
+              <a href="#contact">Request Quote</a>
               <a href="#">Certifications</a>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <div className="footer-copy">© 2024 Phonixora. All rights reserved.</div>
+          <div className="footer-copy">© 2024 Phonixora Bio-Polymer. All rights reserved.</div>
           <div className="footer-certs">
-            <div className="cert-badge">ISO 14001</div>
-            <div className="cert-badge">EN 13432</div>
-            <div className="cert-badge">ASTM D6400</div>
+            <div className="cert-badge">Eco-Friendly</div>
+            <div className="cert-badge">Biodegradable</div>
+            <div className="cert-badge">Certified</div>
           </div>
         </div>
       </div>

@@ -7,12 +7,10 @@ export default function About() {
     <section id="about" className="about">
       <div className="about-inner">
         <div className="about-left">
-          <p className="section-label">About Phonixora</p>
-          <h2 className="section-title">Pioneering sustainable<br/><em>packaging solutions.</em></h2>
+          <p className="section-label">About Phonixora Bio-Polymer</p>
+          <h2 className="section-title">Leading manufacturer of<br/><em>eco-friendly bio-polymers</em></h2>
           <p className="about-text">
-            Phonixora is at the forefront of eco-innovation, creating biodegradable packaging 
-            that doesn't compromise on quality or performance. Our mission is to transform the 
-            packaging industry through sustainable materials and cutting-edge technology.
+            Phonixora Bio-Polymer is a forward-looking manufacturing company focused on producing high-quality biodegradable and bio-based polymer materials. Our mission is to provide sustainable solutions that reduce environmental impact while meeting industrial demands. We serve industries such as packaging, agriculture, and manufacturing with innovative and cost-effective products.
           </p>
         </div>
         <div className="about-right">
@@ -20,29 +18,29 @@ export default function About() {
             <div className="benefit-icon">
               <Leaf size={32} strokeWidth={1.5} />
             </div>
-            <div className="benefit-title">Eco-Friendly</div>
-            <div className="benefit-text">100% biodegradable materials that return to nature</div>
+            <div className="benefit-title">Sustainability</div>
+            <div className="benefit-text">Eco-friendly materials that reduce environmental impact</div>
           </div>
           <div className="benefit-card">
             <div className="benefit-icon">
               <Recycle size={32} strokeWidth={1.5} />
             </div>
-            <div className="benefit-title">Premium Quality</div>
-            <div className="benefit-text">Superior strength and durability for all applications</div>
+            <div className="benefit-title">Quality</div>
+            <div className="benefit-text">High performance and durability for industrial applications</div>
           </div>
           <div className="benefit-card">
             <div className="benefit-icon">
               <Microscope size={32} strokeWidth={1.5} />
             </div>
             <div className="benefit-title">Innovation</div>
-            <div className="benefit-text">Advanced technology meets sustainable design</div>
+            <div className="benefit-text">Custom manufacturing solutions tailored to your needs</div>
           </div>
           <div className="benefit-card">
             <div className="benefit-icon">
               <Globe size={32} strokeWidth={1.5} />
             </div>
-            <div className="benefit-title">Global Impact</div>
-            <div className="benefit-text">Reducing environmental footprint worldwide</div>
+            <div className="benefit-title">Customer Focus</div>
+            <div className="benefit-text">Reliable supply and dedicated support for your business</div>
           </div>
         </div>
       </div>

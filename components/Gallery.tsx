@@ -13,19 +13,8 @@ export default function Gallery() {
         </div>
         
         <div className="gallery-grid">
-          {/* Large featured image */}
-          <div className="gallery-item gallery-item-large">
-            <div className="gallery-image gallery-image-real">
-              <img src="/images/modern-workspace.png" alt="Modern Workspace" className="gallery-img" />
-              <div className="gallery-overlay">
-                <div className="gallery-tag">Office Space</div>
-                <h3 className="gallery-title">Modern Workspace</h3>
-              </div>
-            </div>
-          </div>
-
-          {/* Medium images */}
-          <div className="gallery-item gallery-item-medium">
+          {/* Top row - Two medium images */}
+          <div className="gallery-item gallery-item-top">
             <div className="gallery-image gallery-image-real">
               <img src="/images/manufacturing-plant.png" alt="Manufacturing Excellence" className="gallery-img" />
               <div className="gallery-overlay">
@@ -35,7 +24,18 @@ export default function Gallery() {
             </div>
           </div>
 
-          <div className="gallery-item gallery-item-medium">
+          <div className="gallery-item gallery-item-top">
+            <div className="gallery-image gallery-image-real">
+              <img src="/images/modern-workspace.png" alt="Modern Workspace" className="gallery-img" />
+              <div className="gallery-overlay">
+                <div className="gallery-tag">Office Space</div>
+                <h3 className="gallery-title">Modern Workspace</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom row - One large and two small */}
+          <div className="gallery-item gallery-item-featured">
             <div className="gallery-image gallery-image-real">
               <img src="/images/office-collaboration.png" alt="Innovation Hub" className="gallery-img" />
               <div className="gallery-overlay">
@@ -45,62 +45,26 @@ export default function Gallery() {
             </div>
           </div>
 
-          {/* Small images */}
-          <div className="gallery-item gallery-item-small">
-            <div className="gallery-image placeholder-plant-2">
-              <div className="placeholder-content">
-                <svg viewBox="0 0 200 200" className="placeholder-icon">
-                  <rect x="60" y="60" width="80" height="80" fill="rgba(44,107,58,0.2)" rx="8"/>
-                  <circle cx="100" cy="100" r="25" fill="rgba(123,191,122,0.3)"/>
-                  <path d="M 85 100 L 100 85 L 115 100" stroke="rgba(123,191,122,0.5)" strokeWidth="4" fill="none"/>
-                  <circle cx="100" cy="100" r="15" fill="rgba(168,196,160,0.3)"/>
-                </svg>
-              </div>
+          <div className="gallery-item gallery-item-bottom">
+            <div className="gallery-image gallery-image-real">
+              <img src="/images/logistic.png" alt="Distribution Center" className="gallery-img" />
               <div className="gallery-overlay">
-                <div className="gallery-tag">Quality</div>
-                <h3 className="gallery-title">Testing Lab</h3>
+                <div className="gallery-tag">Logistics</div>
+                <h3 className="gallery-title">Distribution Center</h3>
               </div>
             </div>
           </div>
 
-          <div className="gallery-item gallery-item-small">
-            <div className="gallery-image placeholder-plant-3">
-              <div className="placeholder-content">
-                <svg viewBox="0 0 200 200" className="placeholder-icon">
-                  <rect x="50" y="80" width="30" height="60" fill="rgba(44,107,58,0.2)" rx="4"/>
-                  <rect x="85" y="70" width="30" height="70" fill="rgba(44,107,58,0.3)" rx="4"/>
-                  <rect x="120" y="90" width="30" height="50" fill="rgba(44,107,58,0.2)" rx="4"/>
-                  <path d="M 65 75 Q 65 60 75 55" stroke="rgba(123,191,122,0.4)" strokeWidth="3" fill="none"/>
-                  <path d="M 100 65 Q 100 50 110 45" stroke="rgba(123,191,122,0.4)" strokeWidth="3" fill="none"/>
-                  <path d="M 135 85 Q 135 70 145 65" stroke="rgba(123,191,122,0.4)" strokeWidth="3" fill="none"/>
-                </svg>
-              </div>
+          <div className="gallery-item gallery-item-bottom">
+            <div className="gallery-image gallery-image-real">
+              <img src="/images/warehouse.png" alt="Warehouse Operations" className="gallery-img" />
               <div className="gallery-overlay">
-                <div className="gallery-tag">Materials</div>
-                <h3 className="gallery-title">Raw Materials</h3>
+                <div className="gallery-tag">Storage</div>
+                <h3 className="gallery-title">Warehouse Operations</h3>
               </div>
             </div>
           </div>
 
-          <div className="gallery-item gallery-item-small">
-            <div className="gallery-image placeholder-office-3">
-              <div className="placeholder-content">
-                <svg viewBox="0 0 200 200" className="placeholder-icon">
-                  <rect x="50" y="70" width="100" height="70" fill="rgba(123,191,122,0.2)" rx="6"/>
-                  <circle cx="75" cy="95" r="8" fill="rgba(123,191,122,0.3)"/>
-                  <circle cx="100" cy="95" r="8" fill="rgba(123,191,122,0.3)"/>
-                  <circle cx="125" cy="95" r="8" fill="rgba(123,191,122,0.3)"/>
-                  <rect x="60" y="110" width="80" height="4" fill="rgba(168,196,160,0.4)" rx="2"/>
-                  <rect x="60" y="120" width="60" height="4" fill="rgba(168,196,160,0.4)" rx="2"/>
-                  <rect x="60" y="130" width="70" height="4" fill="rgba(168,196,160,0.4)" rx="2"/>
-                </svg>
-              </div>
-              <div className="gallery-overlay">
-                <div className="gallery-tag">R&D</div>
-                <h3 className="gallery-title">Research Center</h3>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -161,21 +125,29 @@ export default function Gallery() {
         }
         .gallery-grid {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 280px);
           gap: 1.5rem;
-          grid-auto-rows: 280px;
         }
-        .gallery-item-large {
-          grid-column: span 3;
-          grid-row: span 2;
+        .gallery-item-top:nth-of-type(1) {
+          grid-column: 1 / 3;
+          grid-row: 1;
         }
-        .gallery-item-medium {
-          grid-column: span 3;
-          grid-row: span 1;
+        .gallery-item-top:nth-of-type(2) {
+          grid-column: 3 / 5;
+          grid-row: 1;
         }
-        .gallery-item-small {
-          grid-column: span 2;
-          grid-row: span 1;
+        .gallery-item-featured {
+          grid-column: 1 / 3;
+          grid-row: 2 / 4;
+        }
+        .gallery-item-bottom:nth-of-type(4) {
+          grid-column: 3 / 4;
+          grid-row: 2;
+        }
+        .gallery-item-bottom:nth-of-type(5) {
+          grid-column: 4 / 5;
+          grid-row: 2;
         }
         .gallery-image {
           position: relative;
@@ -279,18 +251,20 @@ export default function Gallery() {
         
         @media (max-width: 1024px) {
           .gallery-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: 240px;
           }
-          .gallery-item-large {
-            grid-column: span 4;
+          .gallery-item-top {
+            grid-column: span 1;
+            grid-row: span 1;
+          }
+          .gallery-item-featured {
+            grid-column: span 2;
             grid-row: span 2;
           }
-          .gallery-item-medium {
-            grid-column: span 2;
-          }
-          .gallery-item-small {
-            grid-column: span 2;
+          .gallery-item-bottom {
+            grid-column: span 1;
+            grid-row: span 1;
           }
         }
         
@@ -303,9 +277,9 @@ export default function Gallery() {
             grid-auto-rows: 300px;
             gap: 1rem;
           }
-          .gallery-item-large,
-          .gallery-item-medium,
-          .gallery-item-small {
+          .gallery-item-top,
+          .gallery-item-featured,
+          .gallery-item-bottom {
             grid-column: span 1;
             grid-row: span 1;
           }

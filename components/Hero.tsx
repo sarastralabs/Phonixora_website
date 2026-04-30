@@ -7,9 +7,9 @@ export default function Hero() {
       <div className="hero-content-wrapper">
         {/* Left Side - Text Content */}
         <div className="hero-left">
-          <h1 className="fade-up-2">Innovation meets<br/><em>Nature.</em></h1>
+          <h1 className="fade-up-2">Sustainable Materials<br/><em>for a Better Future</em></h1>
           <p className="hero-sub fade-up-3">
-            Cutting-edge biodegradable packaging solutions for a sustainable tomorrow.
+            Sustainable Polymers for Modern Industry. Leading manufacturer of eco-friendly bio-polymer materials, providing sustainable and high-performance alternatives to conventional plastics.
           </p>
           <div className="hero-actions fade-up-4">
             <button className="btn-primary">Explore Solutions</button>
@@ -19,31 +19,19 @@ export default function Hero() {
 
         {/* Gradient Divider - Curved */}
         <div className="hero-gradient">
-          <div className="gradient-dot"></div>
         </div>
 
         {/* Right Side - Image with Curved Edge */}
         <div className="hero-right">
           <div className="hero-image-container">
-            <svg width="0" height="0" style={{position: 'absolute'}}>
-              <defs>
-                <clipPath id="curveClip" clipPathUnits="objectBoundingBox">
-                  <path d="M 0.12,0 C 0.08,0.25 -0.02,0.7 0.15,1 L 1,1 L 1,0 Z" />
-                </clipPath>
-              </defs>
-            </svg>
             <div className="hero-image">
               <img 
-                src="/images/Best Organic Fertilizers for Summer Growth.jpg" 
-                alt="Sustainable Agriculture Packaging" 
+                src="/images/Hero.png" 
+                alt="Bio-Polymer Manufacturing" 
                 className="hero-real-image"
               />
             </div>
             
-            {/* Decorative Circles */}
-            <div className="deco-circle deco-circle-1"></div>
-            <div className="deco-circle deco-circle-2"></div>
-            <div className="deco-circle deco-circle-3"></div>
           </div>
         </div>
       </div>
@@ -101,10 +89,10 @@ export default function Hero() {
         }
         h1 {
           font-family: var(--font-playfair);
-          font-size: clamp(4rem, 8vw, 7rem);
+          font-size: clamp(3rem, 6vw, 5rem);
           font-weight: 900;
-          line-height: 1.05;
-          letter-spacing: -2px;
+          line-height: 1.1;
+          letter-spacing: -1.5px;
           margin-bottom: 1.8rem;
           color: #f4efe4;
         }
@@ -176,29 +164,6 @@ export default function Hero() {
           justify-content: center;
           z-index: 3;
         }
-        .gradient-dot {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 20px;
-          height: 20px;
-          background: linear-gradient(135deg, #7bbf7a 0%, #a8c4a0 100%);
-          border-radius: 50%;
-          box-shadow: 0 0 30px rgba(123,191,122,0.6), 0 0 60px rgba(168,196,160,0.4);
-          animation: pulse-dot 2s ease-in-out infinite;
-          z-index: 2;
-        }
-        @keyframes pulse-dot {
-          0%, 100% { 
-            transform: translate(-50%, -50%) scale(1); 
-            box-shadow: 0 0 30px rgba(123,191,122,0.6), 0 0 60px rgba(168,196,160,0.4);
-          }
-          50% { 
-            transform: translate(-50%, -50%) scale(1.15); 
-            box-shadow: 0 0 40px rgba(123,191,122,0.8), 0 0 80px rgba(168,196,160,0.6);
-          }
-        }
         
         /* Right Side - Image */
         .hero-right {
@@ -224,14 +189,14 @@ export default function Hero() {
           right: -4rem;
           z-index: 2;
           overflow: hidden;
-          clip-path: url(#curveClip);
+          border-radius: 0;
         }
         .hero-real-image {
           width: 100%;
           height: 100%;
           display: block;
           object-fit: cover;
-          object-position: center;
+          object-position: right center;
           mask-image: linear-gradient(
             to right,
             transparent 0%,
@@ -273,42 +238,6 @@ export default function Hero() {
         @keyframes float-badge {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
-        }
-        
-        /* Decorative Circles */
-        .deco-circle {
-          position: absolute;
-          border-radius: 50%;
-          border: 1px solid rgba(212,196,160,0.2);
-          z-index: 1;
-          pointer-events: none;
-        }
-        .deco-circle-1 {
-          width: 300px;
-          height: 300px;
-          top: 50%;
-          right: 20%;
-          transform: translateY(-50%);
-          animation: rotate-slow 30s linear infinite;
-        }
-        .deco-circle-2 {
-          width: 400px;
-          height: 400px;
-          top: 50%;
-          right: 15%;
-          transform: translateY(-50%);
-          animation: rotate-reverse 40s linear infinite;
-          border-style: dashed;
-        }
-        .deco-circle-3 {
-          width: 200px;
-          height: 200px;
-          top: 50%;
-          right: 25%;
-          transform: translateY(-50%);
-          background: radial-gradient(circle, rgba(212,196,160,0.08) 0%, transparent 70%);
-          border: none;
-          animation: pulse 3s ease-in-out infinite;
         }
         
         /* Floating Leaves Animation */

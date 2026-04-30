@@ -1,6 +1,6 @@
 'use client'
 
-import { Check, X, Leaf, Droplet, Clock, Recycle } from 'lucide-react'
+import { Check, X, Leaf, Droplet, Clock, Recycle, Factory, Waves } from 'lucide-react'
 
 export default function Comparison() {
   return (
@@ -17,103 +17,159 @@ export default function Comparison() {
         <div className="comparison-content">
           {/* Biopolymer Side */}
           <div className="comparison-side biopolymer-side">
-            <div className="comparison-image-wrapper">
-              <div className="comparison-image biopolymer-image">
-                <div className="placeholder-content">
-                  <svg viewBox="0 0 200 200" className="placeholder-icon">
-                    <rect x="50" y="40" width="100" height="120" fill="rgba(123,191,122,0.2)" rx="8"/>
-                    <path d="M 100 60 L 100 100 M 80 80 L 120 80" stroke="rgba(123,191,122,0.4)" strokeWidth="3"/>
-                    <circle cx="100" cy="120" r="15" fill="rgba(123,191,122,0.3)"/>
-                    <path d="M 90 140 Q 100 150 110 140" stroke="rgba(123,191,122,0.4)" strokeWidth="2" fill="none"/>
-                    <path d="M 70 70 Q 65 60 70 50" stroke="rgba(168,196,160,0.5)" strokeWidth="2" fill="none"/>
-                    <path d="M 130 70 Q 135 60 130 50" stroke="rgba(168,196,160,0.5)" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-                <div className="image-badge biopolymer-badge">
-                  <Leaf size={16} />
-                  <span>Eco-Friendly</span>
-                </div>
-              </div>
+            <div className="card-header biopolymer-header">
+              <Check size={20} strokeWidth={3} />
+              <span>GOOD FOR THE PLANET</span>
             </div>
-            <h3 className="comparison-title">Biopolymer Bags</h3>
-            <div className="comparison-features">
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>100% Biodegradable</span>
+            <div className="card-body">
+              <h3 className="comparison-title">Biopolymer Bags</h3>
+              <p className="comparison-subtitle">Sustainable Choice for a Better Tomorrow</p>
+              <div className="comparison-image-wrapper">
+                <div className="comparison-image biopolymer-image">
+                  <img 
+                    src="/images/eco plastic.png" 
+                    alt="Eco-Friendly Biopolymer Bag"
+                    className="comparison-real-image"
+                  />
+                </div>
               </div>
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>Decomposes in 90-180 days</span>
-              </div>
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>Plant-based materials</span>
-              </div>
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>Zero microplastics</span>
-              </div>
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>Compostable certified</span>
-              </div>
-              <div className="feature-item feature-positive">
-                <Check size={20} strokeWidth={2.5} />
-                <span>Reduces carbon footprint</span>
+              <div className="comparison-features">
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Leaf size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>100% Biodegradable</h4>
+                    <p>Naturally decomposes in 90-180 days.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Clock size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Decomposes in 90-180 days</h4>
+                    <p>Breaks down safely without harming the environment.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Leaf size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Plant-based materials</h4>
+                    <p>Made from renewable, natural resources.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Droplet size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Zero microplastics</h4>
+                    <p>Does not release harmful microplastics.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Recycle size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Compostable certified</h4>
+                    <p>Certified safe for industrial & home composting.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-positive">
+                  <div className="feature-icon">
+                    <Leaf size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Reduces carbon footprint</h4>
+                    <p>Lower emissions for a cleaner, greener future.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* VS Divider */}
-          <div className="vs-divider">
-            <div className="vs-circle">VS</div>
+          {/* VS Badge Between Cards */}
+          <div className="vs-badge-wrapper">
+            <div className="vs-badge">VS</div>
           </div>
 
           {/* Plastic Side */}
           <div className="comparison-side plastic-side">
-            <div className="comparison-image-wrapper">
-              <div className="comparison-image plastic-image">
-                <div className="placeholder-content">
-                  <svg viewBox="0 0 200 200" className="placeholder-icon">
-                    <rect x="50" y="40" width="100" height="120" fill="rgba(180,180,180,0.3)" rx="8"/>
-                    <path d="M 100 60 L 100 100 M 80 80 L 120 80" stroke="rgba(140,140,140,0.5)" strokeWidth="3"/>
-                    <circle cx="100" cy="120" r="15" fill="rgba(160,160,160,0.4)"/>
-                    <path d="M 90 140 Q 100 150 110 140" stroke="rgba(140,140,140,0.5)" strokeWidth="2" fill="none"/>
-                    <line x1="60" y1="50" x2="140" y2="150" stroke="rgba(200,80,80,0.6)" strokeWidth="4"/>
-                    <line x1="140" y1="50" x2="60" y2="150" stroke="rgba(200,80,80,0.6)" strokeWidth="4"/>
-                  </svg>
-                </div>
-                <div className="image-badge plastic-badge">
-                  <X size={16} />
-                  <span>Harmful</span>
-                </div>
-              </div>
+            <div className="card-header plastic-header">
+              <X size={20} strokeWidth={3} />
+              <span>HARMFUL TO THE PLANET</span>
             </div>
-            <h3 className="comparison-title">Traditional Plastic</h3>
-            <div className="comparison-features">
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>Non-biodegradable</span>
+            <div className="card-body">
+              <h3 className="comparison-title">Traditional Plastic</h3>
+              <p className="comparison-subtitle">A Threat to Our Environment</p>
+              <div className="comparison-image-wrapper">
+                <div className="comparison-image plastic-image">
+                  <img 
+                    src="/images/traditional plastic.png" 
+                    alt="Traditional Plastic"
+                    className="comparison-real-image"
+                  />
+                </div>
               </div>
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>Takes 500+ years to break down</span>
-              </div>
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>Petroleum-based</span>
-              </div>
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>Releases microplastics</span>
-              </div>
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>Pollutes oceans & landfills</span>
-              </div>
-              <div className="feature-item feature-negative">
-                <X size={20} strokeWidth={2.5} />
-                <span>High carbon emissions</span>
+              <div className="comparison-features">
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <X size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Non-biodegradable</h4>
+                    <p>Does not break down naturally.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <Clock size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Takes 500+ years to break down</h4>
+                    <p>Persists for hundreds of years in the environment.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <Factory size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Petroleum-based</h4>
+                    <p>Made from non-renewable fossil fuels.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <Droplet size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Releases microplastics</h4>
+                    <p>Breaks down into harmful microplastics.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <Waves size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>Pollutes oceans & landfills</h4>
+                    <p>Harms marine life and clogs landfills.</p>
+                  </div>
+                </div>
+                <div className="feature-item feature-negative">
+                  <div className="feature-icon">
+                    <Factory size={24} strokeWidth={2} />
+                  </div>
+                  <div className="feature-content">
+                    <h4>High carbon emissions</h4>
+                    <p>Contributes to climate change and global warming.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -123,28 +179,28 @@ export default function Comparison() {
         <div className="comparison-stats">
           <div className="stat-card">
             <div className="stat-icon">
-              <Clock size={28} />
+              <Clock size={32} />
             </div>
             <div className="stat-value">180 Days</div>
             <div className="stat-label">Biodegradation Time</div>
           </div>
           <div className="stat-card">
             <div className="stat-icon">
-              <Leaf size={28} />
+              <Leaf size={32} />
             </div>
             <div className="stat-value">100%</div>
             <div className="stat-label">Plant-Based Materials</div>
           </div>
           <div className="stat-card">
             <div className="stat-icon">
-              <Droplet size={28} />
+              <Droplet size={32} />
             </div>
             <div className="stat-value">Zero</div>
             <div className="stat-label">Microplastic Release</div>
           </div>
           <div className="stat-card">
             <div className="stat-icon">
-              <Recycle size={28} />
+              <Recycle size={32} />
             </div>
             <div className="stat-value">60%</div>
             <div className="stat-label">Carbon Reduction</div>
@@ -154,22 +210,14 @@ export default function Comparison() {
 
       <style jsx>{`
         .comparison {
-          background: linear-gradient(180deg, #f4efe4 0%, #e8f0e4 100%);
-          padding: 8rem 4rem;
+          background: linear-gradient(180deg, #f8f6f3 0%, #f0ebe4 100%);
+          padding: 6rem 1.5rem;
           position: relative;
         }
-        .comparison::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(44,107,58,0.2), transparent);
-        }
         .comparison-inner {
-          max-width: 1200px;
+          max-width: 1000px;
           margin: 0 auto;
+          width: 100%;
         }
         .comparison-header {
           text-align: center;
@@ -208,130 +256,86 @@ export default function Comparison() {
         .comparison-content {
           display: grid;
           grid-template-columns: 1fr auto 1fr;
-          gap: 3rem;
-          margin-bottom: 5rem;
-          align-items: start;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+          align-items: center;
+          position: relative;
         }
         .comparison-side {
-          background: white;
-          padding: 2.5rem;
-          border-radius: 20px;
-          border: 2px solid rgba(44,107,58,0.1);
-          transition: all 0.4s;
-        }
-        .biopolymer-side {
-          border-color: rgba(123,191,122,0.3);
-        }
-        .biopolymer-side:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(123,191,122,0.15);
-        }
-        .plastic-side {
-          border-color: rgba(180,180,180,0.3);
-        }
-        .plastic-side:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .comparison-image-wrapper {
-          margin-bottom: 2rem;
-        }
-        .comparison-image {
-          position: relative;
-          width: 100%;
-          height: 280px;
-          border-radius: 12px;
+          background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+          border-radius: 24px;
           overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .biopolymer-image {
-          background: linear-gradient(135deg, #e8f0e4 0%, #d4e8d0 100%);
+        .comparison-side:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
         }
-        .plastic-image {
-          background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
-        }
-        .placeholder-content {
-          position: absolute;
-          inset: 0;
+        .card-header {
+          padding: 1rem 2rem;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-        .placeholder-icon {
-          width: 60%;
-          height: 60%;
-          opacity: 0.7;
-        }
-        .image-badge {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.5rem 1rem;
-          border-radius: 50px;
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-        }
-        .biopolymer-badge {
-          background: rgba(123,191,122,0.9);
+          gap: 0.75rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
           color: white;
         }
-        .plastic-badge {
-          background: rgba(200,80,80,0.9);
-          color: white;
+        .biopolymer-header {
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
+        }
+        .plastic-header {
+          background: linear-gradient(135deg, #b84444 0%, #9a3636 100%);
+        }
+        .card-body {
+          padding: 2rem;
         }
         .comparison-title {
           font-family: var(--font-playfair);
           font-size: 1.8rem;
           font-weight: 700;
           color: #1a3320;
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.5rem;
           text-align: center;
         }
-        .comparison-features {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+        .comparison-subtitle {
+          font-size: 0.85rem;
+          color: #6b8a6b;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          font-weight: 400;
         }
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          font-size: 0.95rem;
-          padding: 0.8rem;
-          border-radius: 8px;
-          transition: all 0.3s;
+        .comparison-image-wrapper {
+          margin-bottom: 2rem;
+          position: relative;
         }
-        .feature-positive {
-          color: #2c6b3a;
-          background: rgba(123,191,122,0.08);
+        .comparison-image {
+          position: relative;
+          width: 100%;
+          height: 260px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
-        .feature-positive:hover {
-          background: rgba(123,191,122,0.15);
-          transform: translateX(4px);
+        .comparison-real-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
         }
-        .feature-negative {
-          color: #8b4545;
-          background: rgba(200,80,80,0.08);
-        }
-        .feature-negative:hover {
-          background: rgba(200,80,80,0.15);
-          transform: translateX(4px);
-        }
-        .vs-divider {
+        .vs-badge-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding-top: 10rem;
+          z-index: 10;
         }
-        .vs-circle {
+        .vs-badge {
           width: 80px;
           height: 80px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
           color: white;
           display: flex;
           align-items: center;
@@ -340,50 +344,109 @@ export default function Comparison() {
           font-size: 1.5rem;
           font-weight: 900;
           letter-spacing: 2px;
-          box-shadow: 0 8px 25px rgba(44,107,58,0.3);
+          box-shadow: 0 8px 30px rgba(44,107,58,0.4);
+          border: 5px solid white;
+        }
+        .comparison-features {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .feature-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.8rem;
+          transition: all 0.3s;
+        }
+        .feature-icon {
+          flex-shrink: 0;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+        }
+        .feature-positive .feature-icon {
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
+          color: white;
+          box-shadow: 0 4px 12px rgba(44,107,58,0.2);
+        }
+        .feature-negative .feature-icon {
+          background: linear-gradient(135deg, #b84444 0%, #9a3636 100%);
+          color: white;
+          box-shadow: 0 4px 12px rgba(184,68,68,0.2);
+        }
+        .feature-item:hover .feature-icon {
+          transform: scale(1.1);
+        }
+        .feature-content {
+          flex: 1;
+          padding-top: 0.2rem;
+        }
+        .feature-content h4 {
+          font-size: 0.9rem;
+          font-weight: 700;
+          margin-bottom: 0.2rem;
+          line-height: 1.4;
+        }
+        .feature-positive .feature-content h4 {
+          color: #2c6b3a;
+        }
+        .feature-negative .feature-content h4 {
+          color: #9a3636;
+        }
+        .feature-content p {
+          font-size: 0.8rem;
+          color: #6b7c6b;
+          line-height: 1.5;
+          font-weight: 400;
         }
         .comparison-stats {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 2rem;
+          gap: 1.5rem;
         }
         .stat-card {
           background: white;
-          padding: 2rem;
-          border-radius: 16px;
+          padding: 2.5rem 1.5rem;
+          border-radius: 20px;
           text-align: center;
           border: 1px solid rgba(44,107,58,0.1);
           transition: all 0.3s;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         .stat-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(44,107,58,0.1);
+          transform: translateY(-6px);
+          box-shadow: 0 12px 35px rgba(44,107,58,0.15);
         }
         .stat-icon {
           color: #2c6b3a;
-          margin-bottom: 1rem;
+          margin-bottom: 1.2rem;
           display: flex;
           justify-content: center;
         }
         .stat-value {
           font-family: var(--font-playfair);
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           font-weight: 800;
           color: #1a3320;
           margin-bottom: 0.5rem;
+          line-height: 1;
         }
         .stat-label {
-          font-size: 0.85rem;
+          font-size: 0.9rem;
           color: #6b8a6b;
           font-weight: 500;
+          line-height: 1.4;
         }
         @media (max-width: 1024px) {
           .comparison-content {
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 3rem;
           }
-          .vs-divider {
-            padding-top: 0;
+          .vs-badge-wrapper {
             order: 2;
           }
           .biopolymer-side {
@@ -392,8 +455,7 @@ export default function Comparison() {
           .plastic-side {
             order: 3;
           }
-          .vs-circle {
-            transform: rotate(90deg);
+          .vs-badge {
             width: 70px;
             height: 70px;
             font-size: 1.3rem;
@@ -415,18 +477,27 @@ export default function Comparison() {
           .section-desc {
             font-size: 1rem;
           }
-          .comparison-side {
-            padding: 1.5rem;
+          .card-body {
+            padding: 2rem 1.5rem;
           }
           .comparison-image {
-            height: 220px;
+            height: 240px;
           }
           .comparison-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
           }
-          .feature-item {
+          .comparison-subtitle {
             font-size: 0.9rem;
-            padding: 0.7rem;
+          }
+          .feature-icon {
+            width: 44px;
+            height: 44px;
+          }
+          .feature-content h4 {
+            font-size: 0.95rem;
+          }
+          .feature-content p {
+            font-size: 0.85rem;
           }
           .comparison-stats {
             grid-template-columns: 1fr;
@@ -449,16 +520,22 @@ export default function Comparison() {
           .section-title {
             font-size: 1.8rem;
           }
-          .comparison-side {
-            padding: 1.2rem;
+          .card-header {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.7rem;
+          }
+          .card-body {
+            padding: 1.5rem 1rem;
           }
           .comparison-image {
             height: 200px;
           }
-          .vs-circle {
-            width: 60px;
-            height: 60px;
-            font-size: 1.1rem;
+          .comparison-title {
+            font-size: 1.5rem;
+          }
+          .feature-icon {
+            width: 40px;
+            height: 40px;
           }
         }
       `}</style>
