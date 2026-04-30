@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,14 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
 
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
@@ -28,6 +37,25 @@ export default function Navbar() {
         <a href="#contact">Contact</a>
       </div>
       <button className="nav-cta">Get Started</button>
+      
+      {/* Mobile Menu Button */}
+      <button className="mobile-menu-btn" onClick={toggleMobileMenu} aria-label="Toggle menu">
+        <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}></span>
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-links">
+          <a href="#home" onClick={closeMobileMenu}>Home</a>
+          <a href="#about" onClick={closeMobileMenu}>About</a>
+          <a href="#products" onClick={closeMobileMenu}>Products</a>
+          <a href="#gallery" onClick={closeMobileMenu}>Gallery</a>
+          <a href="#contact" onClick={closeMobileMenu}>Contact</a>
+        </div>
+      </div>
+
       <style jsx>{`
         .nav {
           position: fixed;
@@ -56,6 +84,7 @@ export default function Navbar() {
           align-items: center;
           gap: 12px;
           cursor: pointer;
+          z-index: 102;
         }
         .nav-logo-img {
           width: 55px;
@@ -138,6 +167,80 @@ export default function Navbar() {
         .nav.scrolled .nav-cta:hover {
           box-shadow: 0 6px 25px rgba(123, 191, 122, 0.4);
         }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+          display: none;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 30px;
+          height: 24px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 102;
+        }
+        .hamburger {
+          width: 30px;
+          height: 3px;
+          background: #1a3320;
+          border-radius: 10px;
+          transition: all 0.3s ease;
+          transform-origin: center;
+        }
+        .nav.scrolled .hamburger {
+          background: #f4efe4;
+        }
+        .hamburger.open:nth-child(1) {
+          transform: translateY(10.5px) rotate(45deg);
+        }
+        .hamburger.open:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.open:nth-child(3) {
+          transform: translateY(-10.5px) rotate(-45deg);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          max-width: 300px;
+          height: 100vh;
+          background: rgba(14, 30, 18, 0.98);
+          backdrop-filter: blur(20px);
+          transition: right 0.3s ease;
+          z-index: 101;
+          padding-top: 100px;
+          box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
+        }
+        .mobile-menu.open {
+          right: 0;
+        }
+        .mobile-menu-links {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .mobile-menu-links a {
+          color: #f4efe4;
+          font-size: 1.1rem;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          padding: 1.5rem 2rem;
+          border-bottom: 1px solid rgba(123, 191, 122, 0.1);
+          transition: all 0.3s;
+        }
+        .mobile-menu-links a:hover {
+          background: rgba(123, 191, 122, 0.1);
+          color: #7bbf7a;
+          padding-left: 2.5rem;
+        }
+
         @media (max-width: 1024px) {
           .nav {
             padding: 1.2rem 2rem;
@@ -164,8 +267,10 @@ export default function Navbar() {
             display: none;
           }
           .nav-cta {
-            padding: 0.65rem 1.4rem;
-            font-size: 0.8rem;
+            display: none;
+          }
+          .mobile-menu-btn {
+            display: flex;
           }
         }
         @media (max-width: 480px) {
@@ -179,9 +284,8 @@ export default function Navbar() {
           .nav-logo-text {
             font-size: 1.1rem;
           }
-          .nav-cta {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.75rem;
+          .mobile-menu {
+            width: 80%;
           }
         }
       `}</style>

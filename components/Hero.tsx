@@ -275,13 +275,10 @@ export default function Hero() {
             background: linear-gradient(
               to bottom,
               #2C6B3A 0%,
-              #2C6B3A 20%,
-              #4a8a5a 30%,
-              #7ba87a 40%,
-              #a8c4a0 50%,
-              #c8d4b8 60%,
-              #e0dac8 70%,
-              #F4EFE4 80%,
+              #2C6B3A 30%,
+              #4a8a5a 45%,
+              #7ba87a 60%,
+              #a8c4a0 75%,
               #F4EFE4 100%
             );
           }
@@ -327,23 +324,40 @@ export default function Hero() {
           }
           .hero-right {
             min-height: 50vh;
-            margin-right: -2rem;
-            padding-right: 2rem;
-            margin-left: -2rem;
-            padding-left: 2rem;
+            margin: 0 -2rem;
+            padding: 0;
           }
           .hero-image {
-            clip-path: none;
-            border-radius: 20px;
-            top: 0;
-            bottom: 0;
-            right: -2rem;
-            left: -2rem;
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            border-radius: 0;
+            top: auto;
+            bottom: auto;
+            left: 0;
+            right: 0;
           }
           .hero-real-image {
-            mask-image: none;
-            -webkit-mask-image: none;
+            object-fit: cover;
             object-position: center center;
+            mask-image: linear-gradient(
+              to top,
+              transparent 0%,
+              rgba(0,0,0,0.3) 8%,
+              rgba(0,0,0,0.6) 15%,
+              rgba(0,0,0,0.85) 22%,
+              black 30%,
+              black 100%
+            );
+            -webkit-mask-image: linear-gradient(
+              to top,
+              transparent 0%,
+              rgba(0,0,0,0.3) 8%,
+              rgba(0,0,0,0.6) 15%,
+              rgba(0,0,0,0.85) 22%,
+              black 30%,
+              black 100%
+            );
           }
           .hero-image::after {
             display: none;
@@ -385,16 +399,11 @@ export default function Hero() {
             font-size: 0.75rem;
           }
           .hero-right {
-            margin-right: -1.5rem;
-            padding-right: 1.5rem;
-            margin-left: -1.5rem;
-            padding-left: 1.5rem;
-            min-height: 40vh;
+            margin: 0 -1.5rem;
+            min-height: 45vh;
           }
           .hero-image {
-            right: -1.5rem;
-            left: -1.5rem;
-            border-radius: 16px;
+            height: 45vh;
           }
           .hero-real-image {
             object-fit: cover;
@@ -424,16 +433,11 @@ export default function Hero() {
             gap: 1rem;
           }
           .hero-right {
-            min-height: 35vh;
-            margin-right: -1rem;
-            padding-right: 1rem;
-            margin-left: -1rem;
-            padding-left: 1rem;
+            margin: 0 -1rem;
+            min-height: 40vh;
           }
           .hero-image {
-            right: -1rem;
-            left: -1rem;
-            border-radius: 12px;
+            height: 40vh;
           }
         }
       `}</style>

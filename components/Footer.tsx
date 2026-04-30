@@ -50,6 +50,9 @@ export default function Footer() {
             <div className="cert-badge">Certified</div>
           </div>
         </div>
+        <div className="footer-developer">
+          Developed by <a href="https://sarastralabs.com" target="_blank" rel="noopener noreferrer">sarastralabs.com</a>
+        </div>
       </div>
       <style jsx>{`
         .footer {
@@ -161,6 +164,24 @@ export default function Footer() {
         .cert-badge:hover {
           border-color: #7bbf7a;
           background: rgba(123,191,122,0.1);
+        }
+        .footer-developer {
+          text-align: center;
+          padding-top: 1.5rem;
+          margin-top: 1.5rem;
+          border-top: 1px solid rgba(123,191,122,0.06);
+          font-size: 0.8rem;
+          color: #4a5c4a;
+        }
+        .footer-developer a {
+          color: #7bbf7a;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s;
+        }
+        .footer-developer a:hover {
+          color: #a8c4a0;
+          text-decoration: underline;
         }
         @media (max-width: 768px) {
           .footer-top {
