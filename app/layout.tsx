@@ -26,7 +26,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="fonts-loaded">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                document.documentElement.classList.add('fonts-loaded');
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${playfair.variable} ${dmSans.variable}`}>{children}</body>
     </html>
   )

@@ -326,9 +326,11 @@ export default function Hero() {
             height: 1px;
           }
           .hero-right {
-            min-height: 60vh;
+            min-height: 50vh;
             margin-right: -2rem;
             padding-right: 2rem;
+            margin-left: -2rem;
+            padding-left: 2rem;
           }
           .hero-image {
             clip-path: none;
@@ -336,11 +338,15 @@ export default function Hero() {
             top: 0;
             bottom: 0;
             right: -2rem;
-            left: 0;
+            left: -2rem;
           }
           .hero-real-image {
             mask-image: none;
             -webkit-mask-image: none;
+            object-position: center center;
+          }
+          .hero-image::after {
+            display: none;
           }
         }
         @media (max-width: 768px) {
@@ -381,11 +387,18 @@ export default function Hero() {
           .hero-right {
             margin-right: -1.5rem;
             padding-right: 1.5rem;
-            min-height: 50vh;
+            margin-left: -1.5rem;
+            padding-left: 1.5rem;
+            min-height: 40vh;
           }
           .hero-image {
             right: -1.5rem;
+            left: -1.5rem;
             border-radius: 16px;
+          }
+          .hero-real-image {
+            object-fit: cover;
+            object-position: center center;
           }
           .deco-circle {
             display: none;
@@ -409,6 +422,18 @@ export default function Hero() {
           }
           .hero-stats {
             gap: 1rem;
+          }
+          .hero-right {
+            min-height: 35vh;
+            margin-right: -1rem;
+            padding-right: 1rem;
+            margin-left: -1rem;
+            padding-left: 1rem;
+          }
+          .hero-image {
+            right: -1rem;
+            left: -1rem;
+            border-radius: 12px;
           }
         }
       `}</style>
