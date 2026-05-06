@@ -4,8 +4,7 @@ import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export default function Contact() {
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number (format: country code + number without + or spaces)
-    const phoneNumber = '1234567890' // Example: 1234567890 for +1 234-567-890
+    const phoneNumber = '916363149612' 
     const message = encodeURIComponent('Hi! I would like to know more about Phonixora Bio-Polymer\'s eco-friendly bio-polymer materials.')
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
@@ -36,7 +35,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact-item-label">Phone</div>
-                <div className="contact-item-value">+91 [Your Number]</div>
+                <div className="contact-item-value">+91 63631 49612</div>
               </div>
             </div>
             <div className="contact-item">
@@ -45,7 +44,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact-item-label">Address</div>
-                <div className="contact-item-value">[Your Address]</div>
+                <div className="contact-item-value">Chikkamagaluru and Bangalore</div>
               </div>
             </div>
           </div>
@@ -53,18 +52,18 @@ export default function Contact() {
           {/* WhatsApp Button */}
           <button onClick={handleWhatsAppClick} className="whatsapp-button">
             <MessageCircle size={24} strokeWidth={2} />
-            <span>Chat on WhatsApp</span>
+            <span>Chat On Whatsapp</span>
           </button>
         </div>
         <div className="contact-right">
           <form className="contact-form">
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" placeholder="John Doe" />
+              <input type="text" id="name" placeholder="Akash" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" placeholder="john@company.com" />
+              <input type="email" id="email" placeholder="name@gmail.com" />
             </div>
             <div className="form-group">
               <label htmlFor="company">Company</label>

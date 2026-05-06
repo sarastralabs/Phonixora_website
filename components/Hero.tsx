@@ -1,6 +1,18 @@
 'use client'
 
+import { useState } from 'react'
+
 export default function Hero() {
+  const [showSolutionsPopup, setShowSolutionsPopup] = useState(false)
+
+  const handleExploreSolutions = () => {
+    setShowSolutionsPopup(true)
+  }
+
+  const closeSolutionsPopup = () => {
+    setShowSolutionsPopup(false)
+  }
+
   return (
     <section id="home" className="hero">
       <div className="hero-bg"></div>
@@ -12,8 +24,8 @@ export default function Hero() {
             Sustainable Polymers for Modern Industry. Leading manufacturer of eco-friendly bio-polymer materials, providing sustainable and high-performance alternatives to conventional plastics.
           </p>
           <div className="hero-actions fade-up-4">
-            <button className="btn-primary">Explore Solutions</button>
-            <button className="btn-ghost">Learn More →</button>
+            <button className="btn-primary" onClick={handleExploreSolutions}>Explore Solutions</button>
+            <a href="#products" className="btn-ghost">Know More →</a>
           </div>
         </div>
 
@@ -35,6 +47,33 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Solutions Popup */}
+      {showSolutionsPopup && (
+        <div className="solutions-popup-overlay" onClick={closeSolutionsPopup}>
+          <div className="solutions-popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="solutions-popup-close" onClick={closeSolutionsPopup}>&times;</button>
+            <div className="solutions-popup-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 className="solutions-popup-title">Coming Soon!</h3>
+            <p className="solutions-popup-text">
+              We're working on creating comprehensive solution guides and resources for our bio-polymer products. Our solutions blog will be updated soon with detailed information, case studies, and best practices.
+            </p>
+            <p className="solutions-popup-subtext">
+              Stay tuned for updates!
+            </p>
+            <button className="solutions-popup-btn" onClick={closeSolutionsPopup}>
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
+
       <style jsx>{`
         .hero {
           min-height: 90vh;
@@ -146,6 +185,10 @@ export default function Hero() {
           cursor: pointer;
           transition: all 0.3s;
           backdrop-filter: blur(10px);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
         .btn-ghost:hover {
           background: rgba(244,239,228,0.2);
@@ -438,6 +481,194 @@ export default function Hero() {
           }
           .hero-image {
             height: 40vh;
+          }
+        }
+
+        /* Solutions Popup Styles */
+        .solutions-popup-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(26, 51, 32, 0.9);
+          backdrop-filter: blur(8px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 200;
+          animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .solutions-popup-content {
+          background: linear-gradient(180deg, #f4efe4 0%, #e8f0e4 100%);
+          border-radius: 24px;
+          padding: 3rem;
+          max-width: 500px;
+          width: 90%;
+          position: relative;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+          animation: slideUp 0.3s ease;
+          text-align: center;
+          border: 2px solid rgba(123, 191, 122, 0.3);
+        }
+        @keyframes slideUp {
+          from { 
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .solutions-popup-close {
+          position: absolute;
+          top: 1.5rem;
+          right: 1.5rem;
+          background: transparent;
+          border: none;
+          font-size: 2rem;
+          color: #6b8a6b;
+          cursor: pointer;
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.3s;
+          line-height: 1;
+        }
+        .solutions-popup-close:hover {
+          background: rgba(44, 107, 58, 0.1);
+          color: #2c6b3a;
+        }
+        .solutions-popup-icon {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 1.5rem;
+          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+        .solutions-popup-icon svg {
+          width: 40px;
+          height: 40px;
+        }
+        .solutions-popup-title {
+          font-family: var(--font-playfair);
+          font-size: 2rem;
+          font-weight: 800;
+          color: #1a3320;
+          margin-bottom: 1rem;
+        }
+        .solutions-popup-text {
+          font-size: 1.05rem;
+          color: #4a5c4a;
+          line-height: 1.7;
+          margin-bottom: 1rem;
+        }
+        .solutions-popup-subtext {
+          font-size: 0.95rem;
+          color: #2c6b3a;
+          font-weight: 600;
+          margin-bottom: 2rem;
+          font-style: italic;
+        }
+        .solutions-popup-btn {
+          width: 100%;
+          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          color: white;
+          font-family: var(--font-dm-sans);
+          font-weight: 600;
+          font-size: 1.05rem;
+          letter-spacing: 0.5px;
+          padding: 1.2rem 2rem;
+          border: none;
+          border-radius: 12px;
+          cursor: pointer;
+          transition: all 0.3s;
+          box-shadow: 0 8px 20px rgba(44, 107, 58, 0.3);
+        }
+        .solutions-popup-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 30px rgba(44, 107, 58, 0.4);
+        }
+
+        @media (max-width: 768px) {
+          .solutions-popup-content {
+            padding: 2.5rem 2rem;
+            max-width: 90%;
+          }
+          .solutions-popup-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1.2rem;
+          }
+          .solutions-popup-icon svg {
+            width: 35px;
+            height: 35px;
+          }
+          .solutions-popup-title {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+          }
+          .solutions-popup-text {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+          }
+          .solutions-popup-subtext {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+          }
+          .solutions-popup-btn {
+            font-size: 1rem;
+            padding: 1.1rem 1.8rem;
+          }
+          .solutions-popup-close {
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            font-size: 1.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .solutions-popup-content {
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+          }
+          .solutions-popup-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+          }
+          .solutions-popup-icon svg {
+            width: 30px;
+            height: 30px;
+          }
+          .solutions-popup-title {
+            font-size: 1.4rem;
+          }
+          .solutions-popup-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+          }
+          .solutions-popup-subtext {
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+          }
+          .solutions-popup-btn {
+            font-size: 0.95rem;
+            padding: 1rem 1.5rem;
           }
         }
       `}</style>

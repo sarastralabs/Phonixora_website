@@ -12,6 +12,16 @@ export default function About() {
           <p className="about-text">
             Phonixora Bio-Polymer is a forward-looking manufacturing company focused on producing high-quality biodegradable and bio-based polymer materials. Our mission is to provide sustainable solutions that reduce environmental impact while meeting industrial demands. We serve industries such as packaging, agriculture, and manufacturing with innovative and cost-effective products.
           </p>
+          <div className="founders">
+            <div className="founders-label">Founders & Directors</div>
+            <div className="founders-names">
+              <span className="founder-name">Akash</span>
+              <span className="founder-separator">•</span>
+              <span className="founder-name">Manjunath S</span>
+              <span className="founder-separator">•</span>
+              <span className="founder-name">Nithin B S</span>
+            </div>
+          </div>
         </div>
         <div className="about-right">
           <div className="benefit-card">
@@ -96,6 +106,36 @@ export default function About() {
           line-height: 1.9;
           color: #4a5c4a;
           font-weight: 300;
+          margin-bottom: 2.5rem;
+        }
+        .founders {
+          padding: 1.5rem 0;
+          border-top: 1px solid rgba(44,107,58,0.15);
+        }
+        .founders-label {
+          font-size: 0.7rem;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #6b8a6b;
+          margin-bottom: 0.8rem;
+          font-weight: 600;
+        }
+        .founders-names {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        .founder-name {
+          font-family: var(--font-playfair);
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #2c6b3a;
+          font-style: italic;
+        }
+        .founder-separator {
+          color: #7bbf7a;
+          font-size: 1rem;
         }
         .about-right {
           display: grid;

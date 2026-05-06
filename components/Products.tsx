@@ -80,7 +80,7 @@ export default function Products() {
           <div className="product-card">
             <div className="product-image">
               <img 
-                src="/images/carry bag.png" 
+                src="/images/package.jpeg" 
                 alt="Biodegradable Carry Bags"
                 className="product-real-image"
               />
