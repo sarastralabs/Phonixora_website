@@ -1,6 +1,16 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
+import '../components/Navbar.css'
+import '../components/Hero.css'
+import '../components/About.css'
+import '../components/Products.css'
+import '../components/Comparison.css'
+import '../components/Gallery.css'
+import '../components/Contact.css'
+import '../components/Footer.css'
+import '../components/SplashLoader.css'
+import SplashLoader from '@/components/SplashLoader'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -26,19 +36,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="fonts-loaded">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                document.documentElement.classList.add('fonts-loaded');
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className={`${playfair.variable} ${dmSans.variable}`}>{children}</body>
+    <html lang="en">
+      <body className={`${playfair.variable} ${dmSans.variable}`}>
+        <SplashLoader>{children}</SplashLoader>
+      </body>
     </html>
   )
 }

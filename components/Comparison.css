@@ -1,0 +1,329 @@
+.comparison {
+          background: linear-gradient(180deg, #f8f6f3 0%, #f0ebe4 100%);
+          padding: 6rem 1.5rem;
+          position: relative;
+        }
+        .comparison-inner {
+          max-width: 1000px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .comparison-header {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 5rem;
+        }
+        .section-label {
+          font-size: 0.75rem;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: #2c6b3a;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+        .section-title {
+          font-family: var(--font-playfair);
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.2;
+          margin-bottom: 1.5rem;
+          color: #1a3320;
+        }
+        .section-title em {
+          font-style: italic;
+          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .section-desc {
+          font-size: 1.1rem;
+          color: #4a5c4a;
+          line-height: 1.8;
+          font-weight: 300;
+        }
+        .comparison-content {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+          align-items: center;
+          position: relative;
+        }
+        .comparison-side {
+          background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .comparison-side:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        .card-header {
+          padding: 1rem 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          color: white;
+        }
+        .biopolymer-header {
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
+        }
+        .plastic-header {
+          background: linear-gradient(135deg, #b84444 0%, #9a3636 100%);
+        }
+        .card-body {
+          padding: 2rem;
+        }
+        .comparison-title {
+          font-family: var(--font-playfair);
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #1a3320;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+        .comparison-subtitle {
+          font-size: 0.85rem;
+          color: #6b8a6b;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          font-weight: 400;
+        }
+        .comparison-image-wrapper {
+          margin-bottom: 2rem;
+          position: relative;
+        }
+        .comparison-image {
+          position: relative;
+          width: 100%;
+          height: 260px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .comparison-real-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .vs-badge-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+        }
+        .vs-badge {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: var(--font-playfair);
+          font-size: 1.5rem;
+          font-weight: 900;
+          letter-spacing: 2px;
+          box-shadow: 0 8px 30px rgba(44,107,58,0.4);
+          border: 5px solid white;
+        }
+        .comparison-features {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .feature-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.8rem;
+          transition: all 0.3s;
+        }
+        .feature-icon {
+          flex-shrink: 0;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+        }
+        .feature-positive .feature-icon {
+          background: linear-gradient(135deg, #3d8b4a 0%, #2c6b3a 100%);
+          color: white;
+          box-shadow: 0 4px 12px rgba(44,107,58,0.2);
+        }
+        .feature-negative .feature-icon {
+          background: linear-gradient(135deg, #b84444 0%, #9a3636 100%);
+          color: white;
+          box-shadow: 0 4px 12px rgba(184,68,68,0.2);
+        }
+        .feature-item:hover .feature-icon {
+          transform: scale(1.1);
+        }
+        .feature-content {
+          flex: 1;
+          padding-top: 0.2rem;
+        }
+        .feature-content h4 {
+          font-size: 0.9rem;
+          font-weight: 700;
+          margin-bottom: 0.2rem;
+          line-height: 1.4;
+        }
+        .feature-positive .feature-content h4 {
+          color: #2c6b3a;
+        }
+        .feature-negative .feature-content h4 {
+          color: #9a3636;
+        }
+        .feature-content p {
+          font-size: 0.8rem;
+          color: #6b7c6b;
+          line-height: 1.5;
+          font-weight: 400;
+        }
+        .comparison-stats {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem;
+        }
+        .stat-card {
+          background: white;
+          padding: 2.5rem 1.5rem;
+          border-radius: 20px;
+          text-align: center;
+          border: 1px solid rgba(44,107,58,0.1);
+          transition: all 0.3s;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .stat-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 35px rgba(44,107,58,0.15);
+        }
+        .stat-icon {
+          color: #2c6b3a;
+          margin-bottom: 1.2rem;
+          display: flex;
+          justify-content: center;
+        }
+        .stat-value {
+          font-family: var(--font-playfair);
+          font-size: 2.8rem;
+          font-weight: 800;
+          color: #1a3320;
+          margin-bottom: 0.5rem;
+          line-height: 1;
+        }
+        .stat-label {
+          font-size: 0.9rem;
+          color: #6b8a6b;
+          font-weight: 500;
+          line-height: 1.4;
+        }
+        @media (max-width: 1024px) {
+          .comparison-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .vs-badge-wrapper {
+            order: 2;
+          }
+          .biopolymer-side {
+            order: 1;
+          }
+          .plastic-side {
+            order: 3;
+          }
+          .vs-badge {
+            width: 70px;
+            height: 70px;
+            font-size: 1.3rem;
+          }
+          .comparison-stats {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .comparison {
+            padding: 5rem 1.5rem;
+          }
+          .comparison-header {
+            margin-bottom: 3rem;
+          }
+          .section-title {
+            font-size: 2rem;
+          }
+          .section-desc {
+            font-size: 1rem;
+          }
+          .card-body {
+            padding: 2rem 1.5rem;
+          }
+          .comparison-image {
+            height: 240px;
+          }
+          .comparison-title {
+            font-size: 1.8rem;
+          }
+          .comparison-subtitle {
+            font-size: 0.9rem;
+          }
+          .feature-icon {
+            width: 44px;
+            height: 44px;
+          }
+          .feature-content h4 {
+            font-size: 0.95rem;
+          }
+          .feature-content p {
+            font-size: 0.85rem;
+          }
+          .comparison-stats {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          .stat-card {
+            padding: 1.5rem;
+          }
+          .stat-value {
+            font-size: 2rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .comparison {
+            padding: 4rem 1rem;
+          }
+          .section-label {
+            font-size: 0.7rem;
+          }
+          .section-title {
+            font-size: 1.8rem;
+          }
+          .card-header {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.7rem;
+          }
+          .card-body {
+            padding: 1.5rem 1rem;
+          }
+          .comparison-image {
+            height: 200px;
+          }
+          .comparison-title {
+            font-size: 1.5rem;
+          }
+          .feature-icon {
+            width: 40px;
+            height: 40px;
+          }
+        }

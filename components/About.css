@@ -1,0 +1,273 @@
+.about {
+          background: linear-gradient(180deg, #f8f5f0 0%, #f4efe4 100%);
+          color: #1a3320;
+          padding: 8rem 4rem;
+          position: relative;
+        }
+        .about::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(44,107,58,0.2), transparent);
+        }
+        .about-inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8rem;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .section-label {
+          font-size: 0.75rem;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: #2c6b3a;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+        .section-title {
+          font-family: var(--font-playfair);
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.2;
+          margin-bottom: 2rem;
+          color: #1a3320;
+        }
+        .section-title em {
+          font-style: italic;
+          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .about-text {
+          font-size: 1.1rem;
+          line-height: 1.9;
+          color: #4a5c4a;
+          font-weight: 300;
+          margin-bottom: 2.5rem;
+        }
+        .founders-spotlight {
+          position: relative;
+          margin-top: 0.5rem;
+          padding: 2rem 1.75rem;
+          border-radius: 20px;
+          background: linear-gradient(
+            135deg,
+            rgba(44, 107, 58, 0.12) 0%,
+            rgba(255, 255, 255, 0.95) 45%,
+            rgba(123, 191, 122, 0.08) 100%
+          );
+          border: 1px solid rgba(44, 107, 58, 0.22);
+          box-shadow:
+            0 4px 24px rgba(44, 107, 58, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+          overflow: hidden;
+        }
+        .founders-spotlight::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 5px;
+          height: 100%;
+          background: linear-gradient(180deg, #7bbf7a, #2c6b3a);
+          border-radius: 20px 0 0 20px;
+        }
+        .founders-spotlight::after {
+          content: '';
+          position: absolute;
+          top: -40%;
+          right: -15%;
+          width: 220px;
+          height: 220px;
+          background: radial-gradient(circle, rgba(123, 191, 122, 0.25) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .founders-eyebrow {
+          position: relative;
+          z-index: 1;
+          font-size: 0.7rem;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: #2c6b3a;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+        .founders-heading {
+          position: relative;
+          z-index: 1;
+          font-family: var(--font-playfair);
+          font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+          font-weight: 800;
+          color: #1a3320;
+          margin-bottom: 1.5rem;
+          line-height: 1.35;
+        }
+        .founders-heading em {
+          font-style: italic;
+          background: linear-gradient(135deg, #2c6b3a 0%, #7bbf7a 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .founders-grid {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          align-items: stretch;
+        }
+        .founder-card {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+          padding: 1.5rem 1.15rem;
+          background: linear-gradient(160deg, #2c6b3a 0%, #3d8a4f 100%);
+          border: 1px solid rgba(123, 191, 122, 0.5);
+          border-radius: 14px;
+          box-shadow: 0 12px 32px rgba(44, 107, 58, 0.28);
+          transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        .founder-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(44, 107, 58, 0.35);
+          border-color: rgba(200, 230, 200, 0.6);
+        }
+        .founder-name {
+          font-family: var(--font-playfair);
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #fff;
+          font-style: italic;
+          line-height: 1.2;
+        }
+        .founder-role {
+          font-size: 0.7rem;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.85);
+          font-weight: 600;
+        }
+        .about-right {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        .benefit-card {
+          background: white;
+          border: 1px solid rgba(44,107,58,0.08);
+          padding: 2rem;
+          border-radius: 16px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .benefit-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #7bbf7a, #2c6b3a);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .benefit-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(44,107,58,0.12);
+          border-color: rgba(123,191,122,0.3);
+        }
+        .benefit-card:hover::before {
+          transform: scaleX(1);
+        }
+        .benefit-icon {
+          color: #2c6b3a;
+          margin-bottom: 1.2rem;
+          display: inline-block;
+          transition: transform 0.4s;
+        }
+        .benefit-card:hover .benefit-icon {
+          transform: scale(1.1) rotate(5deg);
+        }
+        .benefit-title {
+          font-family: var(--font-playfair);
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #1a3320;
+          margin-bottom: 0.6rem;
+        }
+        .benefit-text {
+          font-size: 0.9rem;
+          color: #6b7c6b;
+          line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+          .about-inner, .about-right {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .about {
+            padding: 5rem 1.5rem;
+          }
+          .about-left {
+            text-align: center;
+          }
+          .section-title {
+            font-size: 2rem;
+          }
+          .about-text {
+            font-size: 1rem;
+          }
+          .founders-spotlight {
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+          }
+          .founders-spotlight::before {
+            width: 100%;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+          }
+          .founders-grid {
+            grid-template-columns: 1fr;
+            max-width: 320px;
+            margin: 0 auto;
+          }
+          .founders-heading {
+            font-size: 1.2rem;
+          }
+          .benefit-card {
+            padding: 1.5rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .about {
+            padding: 4rem 1rem;
+          }
+          .section-label {
+            font-size: 0.7rem;
+          }
+          .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+          }
+          .benefit-card {
+            padding: 1.2rem;
+          }
+          .benefit-icon {
+            margin-bottom: 1rem;
+          }
+          .benefit-title {
+            font-size: 1rem;
+          }
+          .benefit-text {
+            font-size: 0.85rem;
+          }
+        }
