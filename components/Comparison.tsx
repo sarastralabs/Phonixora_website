@@ -204,6 +204,46 @@ export default function Comparison() {
             <div className="stat-label">Carbon Reduction</div>
           </div>
         </div>
+
+        {/* Cattle Impact Callout */}
+        <div className="cattle-impact">
+          <div className="cattle-impact-image-wrapper">
+            <img
+              src="/images/cattle.png"
+              alt="Cattle affected by polythene ingestion"
+              className="cattle-impact-image"
+            />
+          </div>
+          <div className="cattle-impact-content">
+            <div className="cattle-impact-image-badge">
+              <X size={16} strokeWidth={3} />
+              <span>Real Threat</span>
+            </div>
+            <p className="section-label">The Hidden Danger</p>
+            <h3 className="cattle-impact-title">Polythene Ingestion in <em>Cattle</em></h3>
+            <p className="cattle-impact-desc">
+              Discarded polythene bags are one of the leading causes of livestock deaths across India. Cattle unknowingly consume plastic while grazing, causing it to accumulate in their digestive tracts — leading to blockages, malnutrition, and death.
+            </p>
+            <ul className="cattle-impact-points">
+              <li>
+                <X size={14} strokeWidth={3} className="point-icon-bad" />
+                Plastic blocks the rumen, preventing digestion of food
+              </li>
+              <li>
+                <X size={14} strokeWidth={3} className="point-icon-bad" />
+                Toxic chemicals leach into the animal's bloodstream
+              </li>
+              <li>
+                <X size={14} strokeWidth={3} className="point-icon-bad" />
+                Affects milk quality and poses risks to the food chain
+              </li>
+              <li>
+                <Leaf size={14} strokeWidth={2} className="point-icon-good" />
+                Biodegradable bags dissolve safely — no ingestion risk
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       </section>
