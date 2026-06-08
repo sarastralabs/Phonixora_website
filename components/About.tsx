@@ -1,4 +1,4 @@
-import { Leaf, Recycle, Microscope, Globe } from 'lucide-react'
+import { Leaf, Recycle, Microscope, Globe, UserRound, BarChart2, Crown } from 'lucide-react'
 
 export default function About() {
   return (
@@ -11,22 +11,47 @@ export default function About() {
             Phonixora Bio-Polymer is a forward-looking manufacturing company focused on producing high-quality biodegradable and bio-based polymer materials. Our mission is to provide sustainable solutions that reduce environmental impact while meeting industrial demands. We serve industries such as packaging, agriculture, and manufacturing with innovative and cost-effective products.
           </p>
           <div className="founders-spotlight">
-            
             <h3 className="founders-heading">
               The Minds Behind <em>Phonixora Bio-Polymer</em>
             </h3>
-            <div className="founders-grid">
-              <div className="founder-card">
-                <span className="founder-name">Akash Nayak</span>
-                <span className="founder-role">Founder & Director</span>
+            <div className="founders-divider">
+              <span className="founders-divider-line" />
+              <Leaf size={16} className="founders-divider-leaf" />
+              <span className="founders-divider-line" />
+            </div>
+            <div className="founders-list">
+              <div className="founder-row">
+                <div className="founder-row-icon">
+                  <UserRound size={28} strokeWidth={1.5} />
+                </div>
+                <div className="founder-row-divider" />
+                <div className="founder-row-info">
+                  <span className="founder-row-name">Akash Nayak</span>
+                  <span className="founder-row-role">Chairman, founder</span>
+                </div>
+                <div className="founder-row-arrow">›</div>
               </div>
-              <div className="founder-card">
-                <span className="founder-name">Nithin</span>
-                <span className="founder-role">Director</span>
+              <div className="founder-row">
+                <div className="founder-row-icon">
+                  <BarChart2 size={28} strokeWidth={1.5} />
+                </div>
+                <div className="founder-row-divider" />
+                <div className="founder-row-info">
+                  <span className="founder-row-name">Nithin</span>
+                  <span className="founder-row-role">Director</span>
+                </div>
+                <div className="founder-row-arrow">›</div>
               </div>
-              <div className="founder-card">
-                <span className="founder-name">Manjunath</span>
-                <span className="founder-role">CEO</span>
+              <div className="founder-row">
+                <div className="founder-row-icon">
+                  <Crown size={28} strokeWidth={1.5} />
+                </div>
+                <div className="founder-row-divider" />
+                <div className="founder-row-info">
+                  <span className="founder-row-name">Manjunath</span>
+                  <span className="founder-row-role">CEO and Director</span>
+                </div>
+                <div className="founder-row-arrow">›</div>
               </div>
             </div>
           </div>

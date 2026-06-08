@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <div className="footer-copy">© 2024 Phonixora Bio-Polymer. All rights reserved.</div>
+          <div className="footer-copy">© {new Date().getFullYear()} Phonixora Bio-Polymer. All rights reserved.</div>
           <div className="footer-certs">
             <div className="cert-badge">Eco-Friendly</div>
             <div className="cert-badge">Biodegradable</div>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-developer">
-          Developed by <a href="https://sarastralabs.com" target="_blank" rel="noopener noreferrer">sarastralabs.com</a>
+          Designed And Developed by <a href="https://sarastralabs.com" target="_blank" rel="noopener noreferrer">sarastralabs.com</a>
         </div>
       </div>
       </footer>
