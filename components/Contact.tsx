@@ -1,11 +1,9 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { useState } from 'react'
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
   const handleWhatsAppClick = () => {
@@ -14,23 +12,37 @@ export default function Contact() {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!formRef.current) return
-
     setStatus('sending')
 
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      company: formData.get('company') as string,
+      message: formData.get('message') as string,
+    }
+
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      )
-      setStatus('success')
-      formRef.current.reset()
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        setStatus('success')
+        form.reset()
+      } else {
+        const result = await res.json()
+        console.error('Form error:', result)
+        setStatus('error')
+      }
       setTimeout(() => setStatus('idle'), 5000)
-    } catch {
+    } catch (err) {
+      console.error('Fetch error:', err)
       setStatus('error')
       setTimeout(() => setStatus('idle'), 5000)
     }
@@ -83,14 +95,14 @@ export default function Contact() {
           </button>
         </div>
         <div className="contact-right">
-          <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" name="from_name" placeholder="Akash" required />
+              <input type="text" id="name" name="name" placeholder="Akash" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="from_email" placeholder="name@gmail.com" required />
+              <input type="email" id="email" name="email" placeholder="name@gmail.com" required />
             </div>
             <div className="form-group">
               <label htmlFor="company">Company</label>
