@@ -234,3 +234,20 @@
             font-size: 0.9rem;
           }
         }
+
+        .btn-submit:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+        .form-success-msg {
+          margin-top: 0.75rem;
+          font-size: 0.9rem;
+          color: #2c6b3a;
+          font-weight: 500;
+        }
+        .form-error-msg {
+          margin-top: 0.75rem;
+          font-size: 0.9rem;
+          color: #b84444;
+          font-weight: 500;
+        }
